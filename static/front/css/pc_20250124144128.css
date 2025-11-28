@@ -3709,30 +3709,36 @@ a {
 
 /* --- 모바일 반응형 스타일 시작 --- */
 @media screen and (max-width: 768px) {
-    /* 1. 모바일에서만 특정 요소를 숨기거나 보이게 합니다. */
-    .pc-only-menu {
-        display: none; /* PC 전용 메뉴 숨기기 */
-    }
-    .mobile-only-menu {
-        display: block; /* 모바일 전용 메뉴 표시 (기존에 숨겨져 있었다면) */
-    }
-
-    /* 2. 레이아웃을 모바일에 맞게 조정합니다. */
-    .wrap-container {
-        width: 100%; /* 너비를 100%로 설정 */
-        padding: 0 15px; /* 좌우 여백을 줘서 콘텐츠가 붙지 않게 함 */
+    /* 1. 최상위 컨테이너의 너비를 모바일에 맞춰 100%로 설정 */
+    .wrap,
+    .container {
+        width: 100% !important; 
+        padding: 0 15px; /* 좌우 패딩을 주어 내용이 가장자리에 붙지 않게 합니다 */
     }
 
-    /* 3. 컬럼 레이아웃을 세로로 변경합니다. (예: 2개 컬럼을 1개로) */
-    .two-column-area {
-        float: none; /* 플로트 해제 */
-        width: 100%; /* 너비를 100%로 설정 */
-        margin-bottom: 20px;
+    /* 2. PC에서 2~3개 컬럼으로 나뉘어 있던 레이아웃 요소를 100%로 만듭니다. */
+    .content-area,
+    .sidebar-area,
+    .board-list-wrap {
+        float: none;
+        width: 100% !important;
+        margin-left: 0;
+        margin-right: 0;
     }
     
-    /* 4. 폰트 크기를 모바일에 맞게 조정합니다. */
-    h1 {
-        font-size: 24px;
+    /* 3. 이미지와 비디오가 화면을 넘어가지 않도록 설정합니다. */
+    img, 
+    video, 
+    embed {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 4. 헤더 및 네비게이션도 전체 너비를 사용하도록 설정 */
+    .header-wrap,
+    .nav-wrap {
+        width: 100% !important;
+        box-sizing: border-box; /* 패딩이 너비를 초과하지 않도록 설정 */
     }
 }
 /* --- 모바일 반응형 스타일 끝 --- */
