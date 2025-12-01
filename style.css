@@ -1,0 +1,127 @@
+/* ==================================== */
+/* 1. 기본 초기화 및 PC 레이아웃 (PC First 접근) */
+/* ==================================== */
+
+/* 모든 요소에 box-sizing 적용: 패딩과 보더가 너비/높이에 포함되어 레이아웃 계산이 쉬워집니다. (필수) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.main-header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* 네비게이션: PC에서는 가로로 배열 */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    padding: 0 15px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 메인 컨테이너: PC에서는 최대 너비 지정 */
+.container {
+    max-width: 1200px; /* PC에서 최대 너비 제한 */
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex; /* Flexbox를 사용하여 콘텐츠와 사이드바를 가로로 배치 */
+    gap: 20px;
+}
+
+/* 콘텐츠 영역: PC에서 70% 너비 */
+.content {
+    flex: 3; /* 전체 5 중 3의 비율 */
+    background: #fff;
+    padding: 20px;
+}
+
+/* 사이드바: PC에서 30% 너비 */
+.sidebar {
+    flex: 2; /* 전체 5 중 2의 비율 */
+    background: #e0e0e0;
+    padding: 20px;
+}
+
+/* 카드 영역: PC에서는 3개 카드가 한 줄에 표시 */
+.card-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #ccc;
+    padding: 15px;
+    text-align: center;
+    flex: 1; /* 카드 3개가 동일한 너비로 가로 배치 */
+}
+
+.main-footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* ==================================== */
+/* 2. 미디어 쿼리 (모바일 환경 768px 이하) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    /* 컨테이너: 최대 너비 제한을 없애고 유동적으로 변경 */
+    .container {
+        flex-direction: column; /* 가로 배열을 세로 배열로 변경 (콘텐츠 -> 사이드바) */
+        padding: 0 10px; /* 좌우 패딩을 줄여 공간 확보 */
+    }
+
+    /* 네비게이션: 모바일에서는 메뉴를 세로로 배열 */
+    .main-nav ul {
+        flex-direction: column;
+    }
+    .main-nav li {
+        padding: 5px 0;
+        border-bottom: 1px solid #555;
+    }
+    
+    /* 카드 영역: 모바일에서는 1개 또는 2개 카드가 한 줄에 표시 */
+    .card-wrapper {
+        flex-wrap: wrap; /* 카드가 넘치면 아래 줄로 자동 이동 */
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 48%; /* 2개 카드가 한 줄에 들어가도록 48% 설정 */
+        margin-bottom: 10px;
+        flex: auto; /* Flexbox 비율 재설정 해제 */
+    }
+
+    /* 좁은 화면 (480px 이하)에서는 카드를 1개씩 세로로 표시 */
+    @media (max-width: 480px) {
+        .card {
+            width: 100%;
+        }
+    }
+}
