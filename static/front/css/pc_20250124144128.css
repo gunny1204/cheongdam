@@ -3707,80 +3707,87 @@ a {
     }
 }
 
-/* --- 모바일 반응형 스타일 시작 --- */
 /* ==================================== */
 /* 🚀 모바일 반응형 레이아웃 시작 (화면 너비 768px 이하) */
 /* ==================================== */
 
 @media screen and (max-width: 768px) {
     
-    /* 1. 이미지 및 미디어 요소의 반응성 확보 (모바일 화면을 넘치지 않게 함) */
-    /* img 태그에 vertical-align: top이 이미 적용되어 있으므로, max-width만 추가합니다. */
+    /* 1. 기본 요소 설정: 모든 미디어 요소가 화면을 넘지 않도록 합니다. */
     img, 
     iframe, 
     video, 
     object {
         max-width: 100%;
-        height: auto; /* 이미지 비율 유지 */
+        height: auto; /* 이미지의 비율을 유지 */
     }
 
-    /* 2. 최상위 컨테이너와 주요 레이아웃 영역의 너비를 100%로 강제합니다. */
-    /* 기존 PC용 고정 너비(예: 1200px)를 덮어씁니다. */
-    .wrap, 
-    .container, 
-    .content-wrap, 
-    .main-area,
-    .limit_area {
+    /* 2. 주 컨테이너: 고정된 PC 너비를 해제하고 전체 너비를 사용합니다. */
+    .wrap,
+    .fc_container,
+    .container,
+    .area_inner {
         width: 100% !important; 
         max-width: 100% !important; 
-        padding-left: 15px; /* 좌우에 적절한 여백을 주어 가장자리에 붙지 않게 합니다. */
+        /* 좌우 여백을 주어 콘텐츠가 화면 가장자리에 붙지 않도록 합니다. */
+        padding-left: 15px; 
         padding-right: 15px;
+        box-sizing: border-box; /* 패딩이 전체 너비에 포함되도록 함 */
         margin-left: auto;
         margin-right: auto;
-        /* PC에서 float을 썼다면 float: none; 추가 필요 */
     }
-    
-    /* 3. 리스트 및 갤러리 영역의 정렬 변경 */
-    /* PC에서 가로로 배치된 리스트(Flex 또는 Float 사용 시)를 세로로 재배치합니다. */
-    .gallery_box .list_gallery li,
-    .card_board li,
-    .card_board .info_area,
-    .gallery_area ul,
-    .sns_section .list_sns {
-        /* Flexbox 또는 Float으로 가로 배치되었다면 이를 해제하고 세로로 쌓이게 함 */
+
+    /* 3. 헤더 및 내비게이션 (GNB) 처리 */
+    .header {
+        position: relative; /* PC에서 fixed 등 복잡한 설정이 있었다면 재설정 */
+        height: auto;
+    }
+
+    /* PC에서 가로로 길게 늘어져 있던 메뉴 영역 숨김 */
+    .area_navbar {
+        display: none; 
+    }
+
+    /* 전체보기 버튼(사이드 메뉴 토글) 영역은 필요하므로 유지 */
+    .area_global {
+        /* 필요에 따라 레이아웃 조정 (예: 오른쪽 정렬 유지) */
+    }
+
+    /* 4. 주요 콘텐츠 영역 (Main Area) 재배치 */
+    .main_area .inner, 
+    .fcdeck_ct {
+        /* PC에서 사용된 컬럼 레이아웃(float, flex, grid 등)을 해제하고 세로로 쌓이게 합니다. */
         float: none;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        margin-bottom: 10px; /* 항목 간 세로 여백 추가 */
+        padding: 0;
+        display: block;
     }
     
-    /* 4. 글꼴 크기 조정 (가독성 향상) */
-    body,
-    button,
-    input,
-    select,
-    table,
-    textarea {
-        font-size: 14px; /* 기존 13px에서 14px로 약간 키워 모바일 가독성 개선 */
+    /* 카드 컴포넌트 간의 간격 조정 */
+    .uio_box {
+        margin-bottom: 20px;
     }
-    
-    .limit_area {
-        /* PC에서 90px/110px이던 padding을 모바일에서 줄여 공간 활용 */
-        padding: 50px 15px 70px; 
-    }
-}
 
-/* 좁은 스마트폰 환경 (480px 이하)을 위한 추가 조정 */
-@media screen and (max-width: 480px) {
-    
-    /* 패딩을 더 줄여 화면을 가득 채우도록 함 */
-    .wrap, 
-    .container,
-    .limit_area {
-        padding-left: 10px; 
-        padding-right: 10px;
+    /* 5. 상단 이미지 영역 (Spot Area) 조정 */
+    .section_spot {
+        /* 높이 고정 해제 및 패딩/마진 조정 */
+        padding-bottom: 0;
     }
+    
+    .spot_homesite {
+        padding: 15px; /* 내부 정보 영역 패딩 조정 */
+        position: relative; /* PC에서 absolute였을 경우를 대비 */
+        bottom: auto;
+    }
+    
+    /* 6. 사이드 메뉴 (전체보기 메뉴) */
+    .side_menu {
+        /* 모바일에서는 화면 전체를 덮도록 설정되어 있을 가능성이 높으므로, 특별한 조정은 불필요. */
+        /* 필요하다면 너비를 300px 등으로 고정할 수 있습니다. */
+    }
+
 }
 /* --- 모바일 반응형 스타일 끝 --- */
 
