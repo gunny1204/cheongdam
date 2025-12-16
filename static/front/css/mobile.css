@@ -251,9 +251,9 @@
     /* ========================================================== */
     .thmb_view {
         /* 고정된 최소 높이나 높이가 있다면 해제 */
-        min-height: auto !important; 
+        min-height: auto !important;
         height: auto !important;
-        
+
         /* 하단 마진과 패딩을 0으로 설정하여 노란색 공백을 제거 */
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
@@ -266,7 +266,8 @@
     .component_margin+.component_margin,
     .component_margin+.r,
     .r+.component_margin {
-        margin-top: 10px !important; /* 40px 대신 10px로 축소 */
+        margin-top: 10px !important;
+        /* 40px 대신 10px로 축소 */
     }
 
     /* 3. 소개글 컨테이너 (.detail_tx)의 상단 공간 강제 제거 */
@@ -278,7 +279,8 @@
 
     /* 4. 소개글 제목 (.tit)의 상단 패딩 (데스크톱: 27px) 축소 */
     .detail_tx .tit {
-        padding-top: 5px !important; /* 27px에서 5px로 대폭 축소 */
+        padding-top: 5px !important;
+        /* 27px에서 5px로 대폭 축소 */
         margin-top: 0 !important;
     }
 
@@ -286,6 +288,128 @@
     .section_sub_menu_wrap {
         display: none !important;
     }
+
+    /* ========================================================== */
+    /* 1. 헤더 컨테이너 고정 너비 및 패딩 문제 해결 (핵심 구조 FIX) */
+    /* ========================================================== */
+
+    /* section_header: 헤더 내부 컨텐츠를 Flexbox로 관리 */
+    .header .section_header {
+        position: relative !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        /* 좌우 패딩을 0으로 설정하여 Flexbox가 100% 공간을 모두 사용하도록 함 */
+        padding: 0 !important;
+
+        /* 💡 Flexbox 설정: 내부 요소(로고, 메뉴 등)를 수평으로 배치 */
+        display: flex !important;
+        align-items: center !important;
+        /* 수직 중앙 정렬 */
+        justify-content: space-between !important;
+        /* 로고와 버튼을 양 끝으로 분리 */
+
+        min-height: 45px !important;
+        /* 헤더가 최소한의 높이를 갖도록 보장 */
+    }
+
+    /* .header .area_inner: 헤더 상하 패딩 조정 */
+    .header .area_inner {
+        padding: 10px 0 !important;
+        width: 100% !important;
+        /* inner 영역 너비 100% 보장 */
+    }
+
+
+    /* ========================================================== */
+    /* 2. '전체보기' 버튼 디자인 및 햄버거 아이콘만 표시 */
+    /* ========================================================== */
+    
+    /* 버튼 컨테이너 (.btn_view_all): 햄버거 아이콘만 표시 */
+    .area_global .btn_view_all {
+        /* 💡 버튼을 우측 끝으로 밀기 위해 마진 조정 (Flexbox에서 사용) */
+        margin-left: auto !important;
+        margin-right: 10px !important; /* 우측 끝에서 10px 띄움 */
+        
+        /* 버튼 크기 설정 */
+        width: 35px !important; 
+        height: 35px !important; 
+        padding: 0 !important; 
+        
+        /* 텍스트 강제 숨김 */
+        color: transparent !important;
+        font-size: 0 !important; 
+        text-indent: -9999px !important; 
+        overflow: hidden !important; 
+
+        /* 아이콘 중앙 정렬 (내부) */
+        display: flex !important; 
+        align-items: center !important; 
+        justify-content: center !important; 
+        
+        z-index: 10 !important; /* z-index를 높여 다른 요소 위에 표시 */
+        position: relative !important; /* position: absolute 해제 */
+    }
+
+    /* 3. 아이콘 요소 (.nicon_drawer): 중앙 선 두께 및 색상 설정 */
+    .area_global .btn_view_all .nicon_drawer {
+        width: 20px !important;
+        height: 3px !important; 
+        
+        margin-right: 0 !important; 
+        
+        display: block !important;
+        position: relative !important; 
+        background-color: #FF8C00 !important; /* 주황색 */
+    }
+
+    /* 4. 위/아래 선 (::before, ::after) 색상 및 두께 설정 */
+    .area_global .btn_view_all .nicon_drawer::before,
+    .area_global .btn_view_all .nicon_drawer::after { 
+        content: "" !important; 
+        position: absolute !important;
+        left: 0 !important;
+        
+        width: 100% !important;
+        height: 3px !important;
+        background-color: #FF8C00 !important; /* 주황색 */
+        
+        display: block !important;
+        opacity: 1 !important;
+    }
+    
+    /* 5. 위/아래 선의 간격 조정 */
+    .area_global .btn_view_all .nicon_drawer::before {
+        top: -9px !important; 
+    }
+    
+    .area_global .btn_view_all .nicon_drawer::after {
+        bottom: -9px !important; 
+    }
+    /* --------------------------------------------- */
+
+    /* 지도 페이지 수정 */
+    /* 주소 영역 전체의 텍스트 중앙 정렬 */
+    .uio_box .map_adr {
+        text-align: center !important; /* 💡 텍스트를 중앙에 정렬 */
+        padding: 15px 0 !important; /* 위아래 여백을 확보하여 지도와 정보 사이 간격 조정 */
+        width: 100% !important; /* 부모 컨테이너의 너비 100% 사용 보장 */
+    }
+    
+    /* 병원 이름 (h3) 스타일 조정 */
+    .uio_box .map_adr h3 {
+        font-size: 16px !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* 주소 (p.theme_color) 스타일 조정 */
+    .uio_box .map_adr p.theme_color {
+        /* 주소 텍스트가 잘 보이도록 크기 조정 */
+        font-size: 20px !important; 
+        font-weight: bold !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+    /* 지도 페이지 수정 끝 */
 
 
     /* 모바일 footer 변경 */
