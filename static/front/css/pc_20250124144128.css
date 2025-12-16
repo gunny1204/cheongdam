@@ -3705,7 +3705,13 @@ a {
     .main .is_side_menu_open .header .area_login {
         right: 337px
     }
+
+    /* .mobile-footer {
+        display: none !important; 
+    } */
 }
+
+
 
 .footer {
     position: relative;
