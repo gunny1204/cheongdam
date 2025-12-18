@@ -1,41 +1,8 @@
 /* ========================================
-   데스크톱/모바일 공통 수정 사항 (슬라이더 기능 제거)
-======================================== */
-
-/* 1. 이미지 슬라이드 데이터 및 스크립트 기능 숨김 */
-#effectdata {
-    display: none !important;
-}
-
-/* 2. 썸네일 목록 숨김 (슬라이더 컨트롤 제어) */
-.thmb_view .lst_thmb {
-    display: none !important;
-}
-
-/* 3. 슬라이드되는 두 번째 이미지 컨테이너 숨김 (첫 번째 이미지만 고정) */
-#view_trans_div #big_1 {
-    display: none !important;
-}
-
-/* 4. 이미지 컨테이너의 플로팅 및 중앙 정렬을 위한 기본 설정 */
-.thmb_view #view_trans_div {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.thmb_view #view_trans_div .thmb {
-    float: none !important;
-    /* 플로팅 해제 */
-    display: inline-block;
-    /* 또는 block + margin: auto; */
-}
-
-/* ========================================
    모바일 반응형 CSS (768px 이하)
 ======================================== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 
     /* 🚨 1. 최상위 요소 초기화 및 중앙 정렬 강화 */
     html,
@@ -289,6 +256,62 @@
         display: none !important;
     }
 
+    /* 둘러보기 수정 시작 */
+    /* 1. 기존 시스템 메인 슬라이더를 숨김 */
+    #view_trans_div {
+        display: none !important;
+    }
+
+    /* 2. 새로 생성될 모바일 전용 이미지 전광판 */
+    .m_big_view {
+        width: 100% !important;
+        margin-bottom: 15px;
+        background: #fff;
+    }
+
+    /* 3. 전광판 내부 이미지 설정 */
+    .m_big_view img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        min-height: 200px;
+    }
+
+    /* 4. 선택된 썸네일 강조 스타일 */
+    /* 강조할 필요가 없어서 제거 */
+    /* #navi_thumb li.active {
+        outline: 3px solid #ff6600 !important;
+        opacity: 1 !important;
+    } */
+
+    /* 썸네일 가로 정렬 보강 (필요시) */
+    .lst_thmb {
+        display: block !important;
+        overflow-x: auto !important;
+    }
+
+    #navi_thumb {
+        display: flex !important;
+        width: max-content !important;
+        padding: 10px 0 !important;
+    }
+
+    #navi_thumb li {
+        width: 75px !important;
+        flex: 0 0 75px !important;
+        margin-right: 8px !important;
+    }
+
+    /* ========== 끝 */
+
+    /* 이미지 클릭시 뷰어가 뜨는 것을 막아주는 코드 */
+    ._image_view_btn {
+        pointer-events: none !important;
+        /* 클릭 무시 */
+        cursor: default !important;
+        /* 마우스 커서를 기본으로 변경 */
+    }
+
     /* ========================================================== */
     /* 1. 헤더 컨테이너 고정 너비 및 패딩 문제 해결 (핵심 구조 FIX) */
     /* ========================================================== */
@@ -313,88 +336,112 @@
     }
 
     /* .header .area_inner: 헤더 상하 패딩 조정 */
-    .header .area_inner {
+    /* .header .area_inner {
         padding: 10px 0 !important;
         width: 100% !important;
         /* inner 영역 너비 100% 보장 */
+    } */
+
+    .header .area_inner {
+        /* overflow: hidden;  <-- 이 줄은 가급적 지우거나 visible로 바꿔보세요 */
+        overflow: visible !important;
+
+        /* 패딩을 위아래 똑같이 줄여서 수평 균형을 맞춥니다 */
+        padding: 10px 15px !important;
+
+        /* 가로 정렬을 위한 설정 추가 */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
     }
 
 
     /* ========================================================== */
     /* 2. '전체보기' 버튼 디자인 및 햄버거 아이콘만 표시 */
     /* ========================================================== */
-    
+
     /* 버튼 컨테이너 (.btn_view_all): 햄버거 아이콘만 표시 */
     .area_global .btn_view_all {
         /* 💡 버튼을 우측 끝으로 밀기 위해 마진 조정 (Flexbox에서 사용) */
         margin-left: auto !important;
-        margin-right: 10px !important; /* 우측 끝에서 10px 띄움 */
-        
+        margin-right: 10px !important;
+        /* 우측 끝에서 10px 띄움 */
+
         /* 버튼 크기 설정 */
-        width: 35px !important; 
-        height: 35px !important; 
-        padding: 0 !important; 
-        
+        width: 35px !important;
+        height: 35px !important;
+        padding: 0 !important;
+
         /* 텍스트 강제 숨김 */
         color: transparent !important;
-        font-size: 0 !important; 
-        text-indent: -9999px !important; 
-        overflow: hidden !important; 
+        font-size: 0 !important;
+        text-indent: -9999px !important;
+        overflow: hidden !important;
 
         /* 아이콘 중앙 정렬 (내부) */
-        display: flex !important; 
-        align-items: center !important; 
-        justify-content: center !important; 
-        
-        z-index: 10 !important; /* z-index를 높여 다른 요소 위에 표시 */
-        position: relative !important; /* position: absolute 해제 */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        z-index: 10 !important;
+        /* z-index를 높여 다른 요소 위에 표시 */
+        position: relative !important;
+        /* position: absolute 해제 */
+
+        top: -6px !important;  /* -5px만큼 위로 이동 (숫자 조절 가능) */
     }
 
     /* 3. 아이콘 요소 (.nicon_drawer): 중앙 선 두께 및 색상 설정 */
     .area_global .btn_view_all .nicon_drawer {
         width: 20px !important;
-        height: 3px !important; 
-        
-        margin-right: 0 !important; 
-        
+        height: 3px !important;
+
+        margin-right: 0 !important;
+
         display: block !important;
-        position: relative !important; 
-        background-color: #FF8C00 !important; /* 주황색 */
+        position: relative !important;
+        background-color: #FF8C00 !important;
+        /* 주황색 */
     }
 
     /* 4. 위/아래 선 (::before, ::after) 색상 및 두께 설정 */
     .area_global .btn_view_all .nicon_drawer::before,
-    .area_global .btn_view_all .nicon_drawer::after { 
-        content: "" !important; 
+    .area_global .btn_view_all .nicon_drawer::after {
+        content: "" !important;
         position: absolute !important;
         left: 0 !important;
-        
+
         width: 100% !important;
         height: 3px !important;
-        background-color: #FF8C00 !important; /* 주황색 */
-        
+        background-color: #FF8C00 !important;
+        /* 주황색 */
+
         display: block !important;
         opacity: 1 !important;
     }
-    
+
     /* 5. 위/아래 선의 간격 조정 */
     .area_global .btn_view_all .nicon_drawer::before {
-        top: -9px !important; 
+        top: -9px !important;
     }
-    
+
     .area_global .btn_view_all .nicon_drawer::after {
-        bottom: -9px !important; 
+        bottom: -9px !important;
     }
+
     /* --------------------------------------------- */
 
     /* 지도 페이지 수정 */
     /* 주소 영역 전체의 텍스트 중앙 정렬 */
     .uio_box .map_adr {
-        text-align: center !important; /* 💡 텍스트를 중앙에 정렬 */
-        padding: 15px 0 !important; /* 위아래 여백을 확보하여 지도와 정보 사이 간격 조정 */
-        width: 100% !important; /* 부모 컨테이너의 너비 100% 사용 보장 */
+        text-align: center !important;
+        /* 💡 텍스트를 중앙에 정렬 */
+        padding: 15px 0 !important;
+        /* 위아래 여백을 확보하여 지도와 정보 사이 간격 조정 */
+        width: 100% !important;
+        /* 부모 컨테이너의 너비 100% 사용 보장 */
     }
-    
+
     /* 병원 이름 (h3) 스타일 조정 */
     .uio_box .map_adr h3 {
         font-size: 16px !important;
@@ -404,12 +451,77 @@
     /* 주소 (p.theme_color) 스타일 조정 */
     .uio_box .map_adr p.theme_color {
         /* 주소 텍스트가 잘 보이도록 크기 조정 */
-        font-size: 20px !important; 
+        font-size: 20px !important;
         font-weight: bold !important;
         line-height: 1.5 !important;
         margin: 0 !important;
     }
+
+    .info_box .list_info .item_title {
+        float: left;
+        width: 100px;
+        padding-left: 5px;
+        font-size: 15px;
+        color: #111
+    }
+
+    /* .info_box .area_aaccount .list_info .item_description {
+        width: 360px;
+        padding-right: 10px
+    }
+
+    .info_box .area_aaccount .list_info .item_description .text {
+        position: relative
+    } 
+
+    .info_box .area_aaccount .list_info .item_description .sub_title {
+        width: 60px;
+        float: left
+    }
+
+    .info_box .area_aaccount .list_info .item_description .sub_text {
+        display: inline-block;
+        width: 150px
+    }*/
+
+    /* 사업자 정보 및 이용시간 항목 정렬 */
+    .local_area .list_info .item_description .text {
+        display: flex !important;
+        /* 가로 배열 */
+        align-items: flex-start !important;
+        /* 상단 기준 정렬 */
+        margin-bottom: 6px !important;
+        /* 줄 간격 */
+        float: none !important;
+        /* 혹시 모를 플로팅 해제 */
+        width: 100% !important;
+    }
+
+    .local_area .list_info .item_description .sub_title {
+        /* 💡 핵심: 고정 너비를 주고 내부 텍스트를 오른쪽으로 */
+        flex: 0 0 65px !important;
+        /* 너비를 65px로 딱 고정 */
+        max-width: 65px !important;
+        text-align: right !important;
+        /* 텍스트는 오른쪽으로 */
+        font-weight: bold !important;
+        margin-right: 10px !important;
+        /* 내용(sub_text)과의 간격 */
+        display: inline-block !important;
+    }
+
+    .local_area .list_info .item_description .sub_text {
+        flex: 1 !important;
+        /* 남은 공간 모두 차지 */
+        display: inline-block !important;
+        text-align: left !important;
+        line-height: 1.4 !important;
+        word-break: break-all !important;
+        white-space: normal !important;
+    }
+
     /* 지도 페이지 수정 끝 */
+
 
 
     /* 모바일 footer 변경 */
@@ -573,24 +685,8 @@
 
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-    .wrap {
-        min-width: auto;
-    }
-
-    .content {
-        width: 100%;
-        padding: 0 40px 80px;
-    }
-
-    .header .section_header,
-    .intro_box {
-        width: 100%;
-        padding: 0 40px;
-    }
-
-    .gallery_area.type2 li,
-    .gallery_area.type3 li {
-        width: 50% !important;
+@media screen and (min-width: 601px) {
+    .m_big_view {
+        display: none !important;
     }
 }
