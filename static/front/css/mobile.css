@@ -33,6 +33,10 @@
         font-size: 18px;
     }
 
+    .area_logo {
+        padding-left: 20px !important; /* 왼쪽 여백 20px 추가 */
+    }
+
     /* 네비게이션 숨김 - 햄버거 메뉴만 표시 */
     .header .area_navbar {
         display: none;
