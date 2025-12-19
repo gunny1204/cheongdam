@@ -48,6 +48,135 @@
         position: relative;
     }
 
+
+    /* 헤더부분 수정 시작 */
+    /* 1. 햄버거 버튼(전체보기) 영역 숨기기 */
+    .header .btn_view_all, 
+    .header .area_global {
+        display: none !important;
+    }
+
+    /* 2. 네비게이션 메뉴(GNB) 표시 및 설정 */
+    .header .area_navbar {
+        display: block !important; /* 숨김 해제 */
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        overflow-x: auto; /* 가로 스크롤 활성화 */
+        -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+    }
+
+    /* 3. 메뉴 리스트 가로 정렬 */
+    .area_navbar .list_sitemenu_wrap {
+        padding: 0 !important;
+    }
+    
+    .area_navbar .list_sitemenu {
+        display: flex !important; /* 가로로 나열 */
+        white-space: nowrap !important; /* 줄바꿈 방지 */
+        padding: 12px 10px !important;
+        margin: 0 !important;
+    }
+
+    .area_navbar .list_sitemenu li {
+        display: inline-block !important;
+        flex: 0 0 auto; /* 크기 고정 */
+        margin: 0 12px !important;
+        padding: 0 !important;
+    }
+
+    /* 4. 불필요한 이전/다음 버튼 숨기기 (터치 스크롤로 대체) */
+    .area_navbar .btn_list_prev,
+    .area_navbar .btn_list_next {
+        display: none !important;
+    }
+
+    /* 5. 로고 영역 조정 (메뉴와 겹치지 않게 세로 배치 추천) */
+    .header .section_header {
+        display: block !important; /* 로고와 메뉴가 위아래로 배치됨 */
+        height: auto !important;
+        padding: 10px 0 0 0 !important;
+    }
+    
+    .header .area_logo {
+        padding-bottom: 10px;
+        /* 지난번에 설정한 왼쪽 여백 유지 */
+        padding-left: 20px !important; 
+    }
+  
+    
+    .section_sub_menu_wrap {
+        /* display: none !important; *//* 서브 메뉴 영역을 모바일에서 완전히 숨김 */
+        display: block !important;
+        width: 100% !important;
+        background-color: #fff !important;
+        border-bottom: 1px solid #eee !important;
+        overflow-x: auto !important; /* 가로 스크롤 활성화 */
+        -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+    }
+
+
+    /* 1. 헤더 전체 높이 설정 해제 (내용물에 따라 늘어나도록) */
+    .header {
+        height: auto !important;
+        position: relative !important;
+    }
+
+    /* 2. 로고와 메뉴를 감싸는 컨테이너를 세로 정렬(Flex Column)로 변경 */
+    .header .section_header .area_inner {
+        display: flex !important;
+        flex-direction: column !important; /* 위아래로 쌓기 */
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    /* 3. 로고 영역 (1층): 높이를 주고 왼쪽 여백 확보 */
+    .header .area_logo {
+        width: 100% !important;
+        height: 60px !important; /* 로고 영역 확보 */
+        display: flex !important;
+        align-items: center !important;
+        padding-left: 20px !important;
+        background-color: #fff;
+    }
+
+    /* 4. 메인 네비게이션 (2층): 로고 바로 아래 배치 */
+    .header .area_navbar {
+        width: 100% !important;
+        background-color: #fff !important;
+        border-top: 1px solid #f0f0f0 !important; /* 로고와 메뉴 구분선 */
+        border-bottom: 1px solid #eee !important;
+        margin: 0 !important;
+    }
+
+    /* 5. 진료과목 서브메뉴 (3층): 메인 메뉴 바로 아래 배치 */
+    .section_sub_menu_wrap {
+        position: relative !important;
+        top: 0 !important;
+        background-color: #fafafa !important; /* 메인 메뉴와 색상 차별화 */
+    }
+
+    /* 1. 메뉴 글자색을 어두운 색으로 강제 지정 */
+    /* 홈 페이지에서 흰색으로 나오던 문제를 해결합니다. */
+    .area_navbar .list_sitemenu li a .text {
+        color: #333 !important; /* 다른 페이지와 동일한 어두운 회색/검정 계열 */
+    }
+
+    /* 2. 현재 선택된 메뉴(홈 등)의 글자색 강조 */
+    /* 병원의 포인트 컬러(오렌지/골드 계열)를 적용하면 더 보기 좋습니다. */
+    .area_navbar .list_sitemenu li.selected a .text {
+        color: #de9725 !important; /* 포인트 컬러 */
+        font-weight: bold !important;
+    }
+
+    /* 3. 메뉴 밑줄(선택 표시) 색상도 함께 맞춤 */
+    .area_navbar .list_sitemenu li.selected a:after {
+        background-color: #de9725 !important;
+    }
+    /* ============================================================ */
+    /* 헤더부분 수정 끝 */
+
+
     /* 메인 이미지 */
     .section_spot .spot_images .img_cover {
         height: 300px;
@@ -255,10 +384,6 @@
         margin-top: 0 !important;
     }
 
-    /* 서브 메뉴 영역을 모바일에서 완전히 숨김 */
-    .section_sub_menu_wrap {
-        display: none !important;
-    }
 
     /* 둘러보기 수정 시작 */
     /* 1. 기존 시스템 메인 슬라이더를 숨김 */
