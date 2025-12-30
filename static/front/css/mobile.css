@@ -29,6 +29,33 @@
 
 @media screen and (max-width: 600px) {
 
+    /* 모바일 기본 텍스트 크기 상향 */
+    body {
+        font-size: 16px !important;
+    }
+
+    /* 페이지 제목 및 섹션 타이틀 */
+    .page-title {
+        font-size: 24px !important;
+    }
+    
+    .section-title {
+        font-size: 22px !important;
+    }
+
+    /* 본문 상세 텍스트 */
+    .retina-container p, 
+    .iol-features li, 
+    .aftercare-detailed p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+
+    /* 인공수정체 카드 내부 텍스트 */
+    .iol-info-row p {
+        font-size: 16px !important;
+    }
+
     /* 🚨 1. 최상위 요소 초기화 및 중앙 정렬 강화 */
     html,
     body {

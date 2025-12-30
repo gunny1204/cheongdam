@@ -274,37 +274,40 @@
       line-height: 1.6;
     }
 
-    /* 1. 이미지를 감싸는 컨테이너 */
+    /* 컨테이너 수정: 고정 높이를 제거하고 이미지 비율에 따름 */
     .img-fixed-container {
       width: 100%;
-      /* 부모 너비에 맞춤 */
-      height: 220px;
-      /* 원하는 고정 높이 */
+      /* 가로 너비는 부모에 맞춤 */
+      height: auto;
+      /* 고정 높이 제거 (이미지 원본 비율 유지) */
       overflow: hidden;
-      /* 이미지가 넘치면 자름 */
       border-radius: 10px;
-      /* 모서리 곡률 유지 */
+      /* 모서리 곡률 */
       margin: 20px 0;
-      /* 상하 여백 */
       background: #f0f0f0;
-      /* 이미지 로딩 전 배경색 */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
+      /* flex 제거 (중앙 정렬 불필요) */
     }
 
-    /* 2. 이미지 스타일 제어 */
+    /* 이미지 수정: 원본 사이즈를 유지하며 가로를 꽉 채움 */
     .img-fixed-container img {
       width: 100%;
-      /* 가로를 꽉 채움 */
-      height: 100%;
-      /* 세로를 꽉 채움 */
+      /* 가로를 컨테이너에 꽉 채움 */
+      height: auto;
+      /* 세로 높이는 가로 비율에 맞춰 자동 조절 */
       object-fit: contain;
-      /* 중요: 비율을 유지하면서 박스를 꽉 채움 (공간 이탈 방지) */
-      object-position: center;
-      /* 이미지의 중앙이 보이도록 설정 */
+      /* 이미지가 잘리지 않고 전체가 다 보이도록 설정 */
       display: block;
-      /* 하단 미세 공백 제거 */
+    }
+
+    /* PC 환경에서 이미지가 너무 거대해지는 것을 방지 (선택 사항) */
+    @media screen and (min-width: 768px) {
+      .img-fixed-container {
+        max-width: 800px;
+        /* PC에서 최대 너비 제한 (원하는 크기로 조절 가능) */
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     /* 만약 이미지 전체가 다 보여야 한다면 (잘리는 곳 없이) 
@@ -383,6 +386,135 @@
       line-height: 1.5;
       margin: 0;
     }
+
+    /* 인공수정체 스타일 시작 */
+    .iol-detail-container {
+      padding: 15px;
+      background: #fff;
+    }
+
+    .iol-compare-table {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .iol-item-box {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .iol-top {
+      padding: 15px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .single-bg {
+      background-color: #6c7a89;
+    }
+
+    .multi-bg {
+      background-color: #4dadbb;
+    }
+
+    .edof-bg {
+      background-color: #2c3e50;
+    }
+
+    .iol-content {
+      padding: 20px;
+    }
+
+    .iol-info-row {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #f2f2f2;
+      padding-bottom: 15px;
+    }
+
+    .iol-info-row:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .iol-info-row strong {
+      display: block;
+      font-size: 13px;
+      color: #4dadbb;
+      margin-bottom: 8px;
+    }
+
+    .iol-info-row p {
+      font-size: 15px;
+      color: #333;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* 시력 범위 바 */
+    .vision-bar {
+      display: flex;
+      justify-content: space-around;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .vision-bar span {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .vision-bar b {
+      color: #4dadbb;
+      font-size: 18px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .iol-content ul {
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .iol-content li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 7px;
+      line-height: 1.5;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .iol-content li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+      color: #4dadbb;
+    }
+
+    /* PC 레이아웃 */
+    @media screen and (min-width: 768px) {
+      .iol-compare-table {
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      .iol-item-box {
+        flex: 1;
+      }
+    }
+
+    /* 인공수정체 스타일 끝 */
 
     /* 모바일 가독성 보정 */
     @media (max-width: 360px) {
@@ -618,46 +750,46 @@
                 <button class="nicon_up2 _sideSubMenuClose"><span class="blind">하위메뉴닫기</span></button>
               </div>
               <ul class="list_sub_menu _subMenu">
-                <li class="_sub">
-                  <a href="index.html@link=vr8k992e.html">
+                <li class="_sub theme_color selected">
+                  <a href="index.html@link=retino.html">
                     <div class="menu_name">
-                      <span class="text">진료과목</span>
+                      <span class="text">망막질환</span>
                     </div>
-                    <span class="selected_line theme_background"></span>
+                    <span class="selected_line "></span>
                   </a>
                 </li>
                 <li class="_sub">
-                  <a href="index.html@link=gbpqclbb.html">
-                    <div class="menu_name">
-                      <span class="text">황반변성</span>
-                    </div>
-                    <span class="selected_line theme_background"></span>
-                  </a>
-                </li>
-                <li class="_sub selected">
                   <a href="index.html@link=aah9jkzv.html">
                     <div class="menu_name">
-                      <span class="text">백내장 수술</span>
+                      <span class="text">백내장수술</span>
                     </div>
-                    <span class="selected_line theme_background"></span>
+                    <span class="selected_line "></span>
                   </a>
                 </li>
                 <li class="_sub">
                   <a href="index.html@link=6wzwcieu.html">
                     <div class="menu_name">
-                      <span class="text">안구건조증 / IPL</span>
+                      <span class="text">안구건조증/IPL</span>
                     </div>
-                    <span class="selected_line theme_background"></span>
+                    <span class="selected_line "></span>
                   </a>
                 </li>
                 <li class="_sub">
+                  <a href="index.html@link=childeye.html">
+                    <div class="menu_name">
+                      <span class="text">어린이근시억제치료</span>
+                    </div>
+                    <span class="selected_line "></span>
+                  </a>
+                </li>
+                <!-- <li class="_sub">
                   <a href="index.html@link=etc2y2x4.html">
                     <div class="menu_name">
                       <span class="text">비급여 항목 안내</span>
                     </div>
-                    <span class="selected_line theme_background"></span>
+                    <span class="selected_line "></span>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </li>
             <!-- [D] 서브메뉴 있으면 is_sub_menu 클래스 추가 -->
@@ -788,8 +920,10 @@
                     </div>
                   </div>
 
-                  <div class="img-placeholder">
-                    [수술실 현미경 및 첨단 장비 사진 삽입]
+                  <div class="img-fixed-container">
+                    <!-- [수술실 현미경 및 첨단 장비 사진 삽입] -->
+                    <img src="../modo-phinf.pstatic.net/20211110_144/1636534799283vuhX2_JPEG/mosaMFaHXO.jpeg"
+                      alt="수술실 장비">
                   </div>
 
                   <h2 class="section-title">백내장 수술 프로세스</h2>
@@ -821,14 +955,198 @@
                     </div>
                   </div>
 
+                  <!-- 인공 수정체 추가 시작 -->
+                  <h2 class="section-title">백내장 인공수정체 종류 비교</h2>
+                  <div class="iol-detail-container">
+                    <div class="iol-compare-table">
+                      <div class="iol-item-box">
+                        <div class="iol-top single-bg">단초점 인공수정체</div>
+                        <div class="iol-content">
+                          <div class="iol-info-row">
+                            <strong>특징</strong>
+                            <p>원거리 또는 근거리 중 <strong>한 가지 초점</strong>에 맞춤</p>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>시력 범위</strong>
+                            <div class="vision-bar">
+                              <span>원거리<br><b>●</b></span>
+                              <span>중거리<br>○</span>
+                              <span>근거리<br>○</span>
+                            </div>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>상세 내용</strong>
+                            <ul>
+                              <li>원거리 시력이 매우 선명하고 깨끗함</li>
+                              <li>빛 번짐 현상이 거의 없음</li>
+                              <li>수술 후 근거리 작업 시 <strong>돋보기 착용 필요</strong></li>
+                              <li>건강보험 적용으로 경제적 부담이 낮음</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="iol-item-box">
+                        <div class="iol-top multi-bg">다초점 인공수정체</div>
+                        <div class="iol-content">
+                          <div class="iol-info-row">
+                            <strong>특징</strong>
+                            <p>원거리와 근거리 <strong>모든 거리의 시력</strong> 교정</p>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>시력 범위</strong>
+                            <div class="vision-bar">
+                              <span>원거리<br><b>●</b></span>
+                              <span>중거리<br>○</span>
+                              <span>근거리<br><b>●</b></span>
+                            </div>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>상세 내용</strong>
+                            <ul>
+                              <li>백내장과 <strong>노안을 동시에 해결</strong></li>
+                              <li>일상생활에서 안경 의존도가 매우 낮음</li>
+                              <li>신문, 스마트폰 등 근거리 독서가 가능</li>
+                              <li>야간 빛 번짐 현상이 나타날 수 있음</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="iol-item-box">
+                        <div class="iol-top edof-bg">연속초점 인공수정체</div>
+                        <div class="iol-content">
+                          <div class="iol-info-row">
+                            <strong>특징</strong>
+                            <p>먼 곳부터 중간 거리까지 <strong>끊김 없는 시야</strong></p>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>시력 범위</strong>
+                            <div class="vision-bar">
+                              <span>원거리<br><b>●</b></span>
+                              <span>중거리<br><b>●</b></span>
+                              <span>근거리<br>○</span>
+                            </div>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>상세 내용</strong>
+                            <ul>
+                              <li>원거리~중간거리까지 선명한 시력 제공</li>
+                              <li>야간 운전 시 빛 번짐 현상을 최소화</li>
+                              <li>내비게이션, PC, 요리 등 <strong>중간거리 활동</strong>에 최적</li>
+                              <li>가장 자연스러운 시야를 제공하는 최신 렌즈</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-fixed-container">
+                    <img src="../img/artificial_lens.png" alt="인공수정체 종류">
+                  </div>
+                  <!-- <h2 class="section-title">백내장 인공수정체 종류 비교</h2>
+                  <div class="iol-detail-container">
+                    <div class="iol-compare-table">
+
+                      <div class="iol-item-box">
+                        <div class="iol-img-area">
+                          <img src="../modo-phinf.pstatic.net/20211110_110/1636534795907vGf5D_JPEG/mosaS5NlD1.jpeg"
+                            alt="단초점 원리">
+                          <div class="iol-tag single-tag">단초점</div>
+                        </div>
+                        <div class="iol-content">
+                          <div class="iol-info-row">
+                            <strong>특징</strong>
+                            <p>한 가지 초점에 맞춰 선명한 시력 제공</p>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>시력 범위</strong>
+                            <div class="vision-bar">
+                              <span>원거리<br><b class="active">●</b></span>
+                              <span>중거리<br>○</span>
+                              <span>근거리<br>○</span>
+                            </div>
+                          </div>
+                          <div class="iol-info-row">
+                            <ul>
+                              <li>원거리 시력이 매우 선명함</li>
+                              <li>빛 번짐 현상이 거의 없음</li>
+                              <li>근거리 작업 시 <strong>돋보기 착용 필요</strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="iol-item-box">
+                        <div class="iol-img-area">
+                          <img src="../modo-phinf.pstatic.net/20211110_134/1636534797171eU2Yy_JPEG/mosaK9bT8S.jpeg"
+                            alt="다초점 원리">
+                          <div class="iol-tag multi-tag">다초점</div>
+                        </div>
+                        <div class="iol-content">
+                          <div class="iol-info-row">
+                            <strong>특징</strong>
+                            <p>원거리와 근거리를 동시에 교정</p>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>시력 범위</strong>
+                            <div class="vision-bar">
+                              <span>원거리<br><b class="active">●</b></span>
+                              <span>중거리<br>○</span>
+                              <span>근거리<br><b class="active">●</b></span>
+                            </div>
+                          </div>
+                          <div class="iol-info-row">
+                            <ul>
+                              <li>백내장과 <strong>노안 동시 해결</strong></li>
+                              <li>일상생활에서 안경 의존도 낮음</li>
+                              <li>야간 빛 번짐 적응 기간 필요</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="iol-item-box">
+                        <div class="iol-img-area">
+                          <img src="../modo-phinf.pstatic.net/20211110_234/1636534798150Fj4rA_JPEG/mosaW3pX9J.jpeg"
+                            alt="연속초점 원리">
+                          <div class="iol-tag edof-tag">연속초점</div>
+                        </div>
+                        <div class="iol-content">
+                          <div class="iol-info-row">
+                            <strong>특징</strong>
+                            <p>원거리~중간거리까지 끊김 없는 시야</p>
+                          </div>
+                          <div class="iol-info-row">
+                            <strong>시력 범위</strong>
+                            <div class="vision-bar">
+                              <span>원거리<br><b class="active">●</b></span>
+                              <span>중거리<br><b class="active">●</b></span>
+                              <span>근거리<br>○</span>
+                            </div>
+                          </div>
+                          <div class="iol-info-row">
+                            <ul>
+                              <li>야간 빛 번짐 최소화로 선명한 시야</li>
+                              <li>PC, 요리 등 <strong>중간거리 활동 최적</strong></li>
+                              <li>가장 자연스러운 시력 회복</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div> -->
+                  <!-- 인공 수정체 추가 끝 -->
+
                   <h2 class="section-title">백내장 수술 후 관리</h2>
                   <div class="aftercare-detailed">
                     <p class="aftercare-intro">수술만큼 중요한 것이 사후 관리입니다.<br><strong>안전한 회복을 위해 다음 사항을 꼭 지켜주세요.</strong></p>
 
                     <div class="care-step-card">
                       <div class="care-img-box">
-                        <img src="img_care_01.jpg" alt="정기 검진"
-                          onerror="this.src='https://via.placeholder.com/150x150/f8f9fa/4dadbb?text=정기검진'">
+                        <!-- <img src="img_care_01.jpg" alt="정기 검진" onerror="this.src='../'"> -->
+                         <img src="img_care_01.jpg" alt="정기 검진" onerror="">
                       </div>
                       <div class="care-content">
                         <!-- <span class="step-label">01</span> -->
@@ -839,8 +1157,7 @@
 
                     <div class="care-step-card">
                       <div class="care-img-box">
-                        <img src="img_care_02.jpg" alt="안약 점안법"
-                          onerror="this.src='https://via.placeholder.com/150x150/f8f9fa/4dadbb?text=안약점안'">
+                        <img src="img_care_02.jpg" alt="안약 점안법" onerror="">
                       </div>
                       <div class="care-content">
                         <!-- <span class="step-label">02</span> -->
@@ -851,8 +1168,7 @@
 
                     <div class="care-step-card">
                       <div class="care-img-box">
-                        <img src="img_care_03.jpg" alt="수면 시 안대"
-                          onerror="this.src='https://via.placeholder.com/150x150/f8f9fa/4dadbb?text=수면안대'">
+                        <img src="img_care_03.jpg" alt="수면 시 안대" onerror="">
                       </div>
                       <div class="care-content">
                         <!-- <span class="step-label">03</span> -->
@@ -863,8 +1179,7 @@
 
                     <div class="care-step-card">
                       <div class="care-img-box">
-                        <img src="img_care_04.jpg" alt="일상 복귀"
-                          onerror="this.src='https://via.placeholder.com/150x150/f8f9fa/4dadbb?text=일상복귀'">
+                        <img src="img_care_04.jpg" alt="일상 복귀" onerror="">
                       </div>
                       <div class="care-content">
                         <!-- <span class="step-label">04</span> -->
