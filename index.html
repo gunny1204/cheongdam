@@ -163,6 +163,15 @@
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
+
+        /* 하단 바 두께를 고려하여 버튼 아래에 충분한 공간 확보 */
+        margin-bottom: 120px !important; 
+        
+        /* 버튼들이 세로로 배치될 때 간격 조절 (선택 사항) */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px; /* 좌우 여백 */
       }
 
       .btn {
@@ -174,6 +183,13 @@
       }
 
       /* 모바일에서 전화 아이콘 표시 */
+
+      /* ==== */
+      /* 오시는 길 버튼이 포함된 하단 영역 */
+      .area_button {
+        margin-bottom: 100px !important;
+        /* 하단 바 두께가 보통 60~80px이므로 그보다 크게 설정 */
+      }
     }
 
     @media (min-width: 769px) {
@@ -564,11 +580,9 @@
               style="background-image:url(../img/title_bg.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://img/title_bg.jpg', sizingMethod='scale')">
               <div class="spot_dimmed" style="opacity:0;"></div>
             </div> -->
-            <div
-              style="opacity:0;width:1px;height:1px;left:-1000px;background-image:url(../img/title_bg.jpg)">
+            <div style="opacity:0;width:1px;height:1px;left:-1000px;background-image:url(../img/title_bg.jpg)">
             </div>
-            <div class="img_cover _imgCover"
-              data-lazy-background-img-src="https://img/title_bg.jpg"
+            <div class="img_cover _imgCover" data-lazy-background-img-src="https://img/title_bg.jpg"
               style="background-image:url(../img/title_bg.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://img/title_bg.jpg', sizingMethod='scale')">
               <div class="spot_dimmed" style="opacity:0;"></div>
             </div>
@@ -655,29 +669,13 @@
                           </div>
                         </div>
                       </div>
-                      <!-- <div id="timeModal" class="system-modal-overlay" style="display: none;">
-                        <div class="system-modal-content">
-                          <div class="system-modal-header">진료시간 안내</div>
 
-                          <div class="system-modal-body">
-                            <p class="hospital-name">" 청담한빛안과 " 입니다.</p>
-
-                            <div class="time-info-text">
-                              <p>평 일 | 09:30 ~ 18:30</p>
-                              <p>토요일 | 09:30 ~ 13:30</p>
-                              <p>점심시간 | 13:00 ~ 14:00</p>
-                              <p class="holiday">일/공휴일 | 휴진</p>
-                            </div>
-
-                            <p class="notice-text">접수는 진료 종료 30분 전 마감됩니다.</p>
-                            <hr class="system-hr">
-                          </div>
-
-                          <div class="system-modal-footer">
-                            <button class="system-confirm-btn" onclick="closeTimeModal(); return false;">확인</button>
-                          </div>
+                      <div class="component_box _component" data-index="2">
+                        <div class="division_line">
+                          <div class="line"></div>
                         </div>
-                      </div> -->
+                      </div>
+
                     </div>
                   </div>
                 </section>

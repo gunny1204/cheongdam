@@ -709,6 +709,9 @@
         z-index: 100 !important;
         /* 배경색은 유지하거나 모바일 전용색으로 변경 가능 */
         background-color: #000 !important;
+
+        padding-top: 50px !important;
+        margin-bottom: 80px !important; /* 하단 고정 버튼 두께만큼 띄우기 */
     }
 
     /* section_footer: 고정 너비 해제 및 전체 너비 사용 */
