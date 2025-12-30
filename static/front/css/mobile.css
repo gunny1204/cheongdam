@@ -1,25 +1,32 @@
 /* 1. 진료과목 섹션 전체 상하 공백 축소 */
 .section_subject {
-    padding-top: 30px !important;    /* 기존보다 상단 여백 축소 (PC/모바일 공통) */
-    padding-bottom: 30px !important; /* 하단 섹션과의 간격 축소 */
+    padding-top: 30px !important;
+    /* 기존보다 상단 여백 축소 (PC/모바일 공통) */
+    padding-bottom: 30px !important;
+    /* 하단 섹션과의 간격 축소 */
 }
 
 /* 2. 제목(백내장수술 등) 상단 공백 제거 */
 .title_subject {
-    margin-top: 0 !important;        /* 제목 위쪽 마진 완전 제거 */
-    margin-bottom: 20px !important;  /* 제목과 아래 내용 사이 간격 */
+    margin-top: 0 !important;
+    /* 제목 위쪽 마진 완전 제거 */
+    margin-bottom: 20px !important;
+    /* 제목과 아래 내용 사이 간격 */
     line-height: 1.2;
 }
 
 /* 3. 더보기 버튼 영역 공백 조정 */
 .area_button {
-    margin-top: 20px !important;     /* 본문과 버튼 사이 간격 */
-    margin-bottom: 10px !important;  /* 버튼 아래쪽 공백 축소 */
+    margin-top: 20px !important;
+    /* 본문과 버튼 사이 간격 */
+    margin-bottom: 10px !important;
+    /* 버튼 아래쪽 공백 축소 */
 }
 
 /* 4. 섹션 사이의 경계선이나 공백 보정 */
 .area_main_content {
-    padding-top: 20px !important;    /* 메인 컨텐츠 시작점 상단 여백 축소 */
+    padding-top: 20px !important;
+    /* 메인 컨텐츠 시작점 상단 여백 축소 */
 }
 
 
@@ -38,14 +45,14 @@
     .page-title {
         font-size: 24px !important;
     }
-    
+
     .section-title {
         font-size: 22px !important;
     }
 
     /* 본문 상세 텍스트 */
-    .retina-container p, 
-    .iol-features li, 
+    .retina-container p,
+    .iol-features li,
     .aftercare-detailed p {
         font-size: 15px !important;
         line-height: 1.7 !important;
@@ -81,19 +88,9 @@
         padding: 0 15px;
     }
 
-    .header .area_logo .site_name {
+    /* .header .area_logo .site_name {
         font-size: 18px;
-    }
-
-    .area_logo {
-        padding-left: 20px !important;
-        /* 왼쪽 여백 20px 추가 */
-    }
-
-    /* 네비게이션 숨김 - 햄버거 메뉴만 표시 */
-    .header .area_navbar {
-        display: none;
-    }
+    } */
 
     .header .btn_view_all {
         display: block !important;
@@ -158,11 +155,58 @@
         padding: 10px 0 0 0 !important;
     }
 
-    .header .area_logo {
-        padding-bottom: 10px;
-        /* 지난번에 설정한 왼쪽 여백 유지 */
-        padding-left: 20px !important;
+    /* 251230 수정 시작 */
+    /* 1. 로고와 글로벌 메뉴 숨기기 */
+    .area_logo,
+    .area_global {
+        display: none !important;
     }
+
+    /* 1. 부모 컨테이너 정렬 초기화: 왼쪽 끝에서 시작하도록 강제 */
+    .area_inner {
+        display: flex !important;
+        justify-content: flex-start !important; /* 중앙 정렬 해제 */
+        align-items: center !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+    /* 2. 네비게이션 창: 왼쪽 끝에 밀착 */
+    .area_navbar {
+        flex: 1 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: auto !important; /* 스크롤 활성화 */
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        text-align: left !important; /* 텍스트 정렬 왼쪽으로 */
+    }
+
+    /* 3. 메뉴 리스트: 시작 지점 보정 */
+    .area_navbar ul {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        margin: 0 !important;
+        padding: 0 10px !important; /* 왼쪽 최소 여백만 부여 */
+        list-style: none !important;
+        justify-content: flex-start !important;
+    }
+
+    /* 4. 메뉴 항목 */
+    .area_navbar li {
+        flex: 0 0 auto !important;
+        padding: 12px 12px !important;
+    }
+
+    /* 스크롤바 숨기기 */
+    .area_navbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 수정 끝 */
 
 
     .section_sub_menu_wrap {
@@ -195,15 +239,14 @@
     }
 
     /* 3. 로고 영역 (1층): 높이를 주고 왼쪽 여백 확보 */
-    .header .area_logo {
+    /* .header .area_logo {
         width: 100% !important;
         height: 60px !important;
-        /* 로고 영역 확보 */
         display: flex !important;
         align-items: center !important;
         padding-left: 20px !important;
         background-color: #fff;
-    }
+    } */
 
     /* 4. 메인 네비게이션 (2층): 로고 바로 아래 배치 */
     .header .area_navbar {
@@ -324,8 +367,10 @@
     /* 타이틀 상단 여백 추가 조정 */
     .fc_container.container {
         padding: 20px 0 0 !important;
-        margin-top: 0px !important; /* 헤더와의 간격을 위로 당김 */
+        margin-top: 0px !important;
+        /* 헤더와의 간격을 위로 당김 */
     }
+
     /* title 공백 수정 251223 end*/
 
     /* 🚨 3. 소개 박스 (Intro Box) 재강화 */
@@ -711,7 +756,8 @@
         background-color: #000 !important;
 
         padding-top: 50px !important;
-        margin-bottom: 80px !important; /* 하단 고정 버튼 두께만큼 띄우기 */
+        margin-bottom: 80px !important;
+        /* 하단 고정 버튼 두께만큼 띄우기 */
     }
 
     /* section_footer: 고정 너비 해제 및 전체 너비 사용 */
