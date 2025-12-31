@@ -165,13 +165,14 @@
         margin: 0 auto;
 
         /* 하단 바 두께를 고려하여 버튼 아래에 충분한 공간 확보 */
-        margin-bottom: 120px !important; 
-        
+        margin-bottom: 120px !important;
+
         /* 버튼들이 세로로 배치될 때 간격 조절 (선택 사항) */
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 0 15px; /* 좌우 여백 */
+        padding: 0 15px;
+        /* 좌우 여백 */
       }
 
       .btn {
@@ -735,7 +736,7 @@
         </ul>
         <!-- //우측 고정 버튼 -->
 
-        <div class="footer _footer" role="contentinfo">
+        <!-- <div class="footer _footer" role="contentinfo">
           <div class="section_footer">
 
             <div class="footer_inner">
@@ -745,11 +746,7 @@
 
               </div>
 
-
-              <!-- [D] 계좌정보 없을경우 is_change 클래스 추가 -->
-              <div class="area_sns is_change">
-                <!-- <a href="index.html#" target="_blank" class="btn_sns nicon_blog _btn_blog"><span class="blind">네이버
-                    블로그</span></a> -->
+              <div class="area_sns is_change">                
                 <a href="index.html#" target="_blank" class="btn_sns nicon_cafe _btn_cafe"><span class="blind">네이버
                     카페</span></a>
                 <a href="index.html#" target="_blank" class="btn_sns nicon_facebook _btn_facebook"><span
@@ -760,30 +757,53 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
-        <!-- <footer class="mobile-footer">
-          <p class="copyright">© 2025 • 청담한빛안과의원 all rights reserved.</p>
+        <footer class="footer _footer" role="contentinfo">
+          <div class="section_footer">
+            <div class="footer_inner">
 
-          <ul class="info-list">
-            <li>733-93-01663</li>
-            <li>
-              서울 양천구 오목로 345 목동 슬로우케어 3층 301~308,
-              <br>
-              312~317호
-            </li>
-          </ul>
+              <div class="mobile_top_area">
+                <a href="#" class="btn_up" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">위로
+                  가기</a>
+              </div>
 
-          <p class="contact-info">
-            전화 : <a href="tel:0226485008">02-2648-5008</a> • 팩스 : 070-4009-7002
-          </p>
-        </footer> -->
+              <div class="footer_flex_container">
+                <div class="area_hospital_info">
+                  <p class="copyright">© 2025 · 청담한빛안과의원 all rights reserved.</p>
+                  <div class="info_text">
+                    <p>전화번호 : <a href="tel:02-512-2955">02-512-2955</a></p>
+                    <p>진료시간 : 평일 09:30~18:30 | 토요일 09:00~13:00 (점심시간 없음)</p>
+                    <p>주소 : 서울특별시 강남구 청담동 43-9</p>
+                  </div>
+                </div>
+
+                <div class="area_aside pc_only_area">
+                  <div class="area_search">
+                    <a href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%B2%AD%EB%8B%B4%ED%95%9C%EB%B9%9B%EC%95%88%EA%B3%BC%40"
+                      target="_blank">
+                      <span class="keyword">청담한빛안과@</span>
+                    </a>
+                  </div>
+                  <div class="area_sns">
+                    <a href="#" target="_blank" class="btn_sns nicon_cafe"></a>
+                    <a href="#" target="_blank" class="btn_sns nicon_facebook"></a>
+                    <a href="#" target="_blank" class="btn_sns nicon_band"></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </footer>
 
       </div>
     </div>
   </div>
 
   <div class="layer_dim _layer_dim"></div>
+
+
 
   <script
     type="text/javascript">var nsc = "modoo.site"; function mergeEnv(b) { function a(d) { var c; for (c in b) { d[c] = b[c]; } } ENV = window.ENV || {}; a(ENV); } mergeEnv({ resetCacheVer: "20250124144128", loginId: "", age: "", gender: "", userType: "", name: "", loginRequired: "0", authority: "", preview: "0", isPC: 1, isTablet: 0, isFirst: 1, siteId: "2984697", displayType: "D", httpHost_: "https://www.modoo.at", mode: "list", viewType: "", page: parseInt("1", 10), query: "", queryType: "2", myList: "0", leadformType: "1", topNotice: "0", messageNo: parseInt("-1", 10), parentNo: parseInt("-1", 10), storeFarmId: parseInt("0", 10), categoryId: parseInt("0", 10), GASiteId: "3972", GACode: "UA-91992442-1" });</script>

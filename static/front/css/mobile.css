@@ -1,3 +1,209 @@
+/* footer 직접 만들어서 붙여보기 시작 */
+/* 푸터 기본 배경 (이미지 톤) */
+/* 전체 배경 및 높이 축소 */
+/* [공통 스타일] */
+/* [1. 공통 기본 스타일] */
+
+.footer._footer {
+    background-color: #3d2b1f !important;
+    color: #fff !important;
+    padding: 15px 0 !important; /* 위아래 여백을 15px로 극단적으로 줄임 */
+    text-align: center;
+    /* 모바일 기본값 */
+}
+
+/* 1. 기존 section_footer의 과도한 패딩 제거 */
+.footer .section_footer {
+    width: 100% !important; /* 고정폭 1100px 해제 */
+    max-width: 1200px !important; /* 원하는 최대폭 설정 */
+    padding: 20px 0 !important; /* 58px에서 20px로 대폭 축소 */
+    margin: 0 auto !important;
+}
+
+.footer .footer_inner {
+    /* 1. 가로 구조 잡기 */
+    max-width: 1100px; /* 상황에 따라 1200px~1300px로 넓혀도 좋습니다 */
+    margin: 0 auto;
+    
+    /* 2. 기존 테마의 불필요한 여백/높이 강제 해제 (다이어트 핵심) */
+    min-height: 0 !important; 
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.info_text p {
+    opacity: 0.8;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.info_text a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* [2. PC 환경: 769px 이상] */
+/* 1. 푸터 내부 컨테이너 폭 확장 및 정렬 */
+@media screen and (min-width: 769px) {
+    .mobile_top_area {
+        display: none !important;
+    }
+    .footer_flex_container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important; /* 수직 중앙 정렬로 높이 최적화 */
+        padding: 0 20px !important;
+    }
+
+    .area_hospital_info {
+        text-align: left !important;
+    }
+
+    .area_aside.pc_only_area {
+        text-align: right !important;
+    }
+    /* 1. 병원 정보 컨테이너 자체를 왼쪽 끝으로 */
+    .area_hospital_info {
+        text-align: left !important; /* 텍스트 좌측 정렬 */
+        flex: 1 !important; /* 남는 공간을 차지하여 검색창을 우측으로 밀어냄 */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* 내부 요소들을 왼쪽 시작점에 맞춤 */
+    }
+
+    /* 2. 개별 텍스트 줄 정렬 확인 */
+    .info_text {
+        text-align: left !important;
+        width: 100% !important;
+    }
+
+    .info_text p, .info_line {
+        text-align: left !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /* 3. 저작권 문구도 왼쪽으로 */
+    .copyright {
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+
+    .footer_inner {
+        max-width: 1300px !important; /* 폭을 1100에서 1300으로 확장하여 더 넓게 배치 */
+        padding: 0 20px !important;
+        margin: 0 auto;
+    }
+
+    .footer_flex_container {
+        display: flex !important;
+        justify-content: space-between !important; /* 좌우 끝으로 확실히 밀어냄 */
+        align-items: flex-end !important;
+        width: 100% !important;
+    }
+
+    /* 2. 우측 영역 (검색창 + SNS) */
+    .area_aside.pc_only_area {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important; /* 우측 끝 정렬 */
+        min-width: 250px; /* 영역 확보 */
+    }
+
+    /* 3. 검색창 디자인 보정 */
+    .area_search {
+        margin-bottom: 15px !important;
+        width: 100%;
+        text-align: right;
+    }
+
+    /* 4. SNS 아이콘 가로 정렬 및 수직 중앙 맞춤 */
+    .area_sns {
+        display: flex !important;
+        flex-direction: row !important; /* 가로 나열 강제 */
+        justify-content: flex-end !important;
+        align-items: center !important; /* 아이콘들 높이 맞춤 */
+        gap: 15px !important;
+        height: 32px; /* SNS 영역 높이 고정 */
+    }
+
+    .btn_sns {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin: 0 !important; /* 기존 불필요한 마진 제거 */
+    }
+}
+
+/* [3. 모바일 환경: 768px 이하] */
+@media screen and (max-width: 768px) {
+
+    /* PC 전용 영역(SNS 등) 숨김 */
+    .pc_only_area {
+        display: none !important;
+    }
+
+    .footer .section_footer {
+        padding: 25px 0 100px !important; /* 모바일 하단바 여백 고려 */
+    }
+
+    /* 위로 가기 버튼 스타일 */
+    .mobile_top_area {
+        display: block !important;
+        z-index: 9999 !important; /* 최상단 레이어로 설정하여 클릭 방해 차단 */
+        margin-bottom: 25px;
+    }
+
+    .btn_up {
+        display: inline-block;
+
+        position: relative !important;
+        z-index: 10000 !important;
+        pointer-events: auto !important; /* 클릭 이벤트 강제 활성화 */
+        
+        background-color: #ffeb3b;
+        color: #3d2b1f !important;
+        padding: 8px 30px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .footer._footer {
+        padding-bottom: 110px !important;
+    }
+
+    /* 1. 최상위 푸터 여백 강제 축소 */
+    .footer._footer {
+        padding-left: 20px !important;  /* 좌측 공백 */
+        padding-right: 20px !important; /* 우측 공백 */
+        padding-top: 20px !important;
+        padding-bottom: 30px !important; /* 기존 100px 가까이 되던 여백을 30px로 줄임 */
+        min-height: auto !important;
+    }
+
+    /* 2. 섹션 및 내부 컨테이너 여백 제거 */
+    .footer .section_footer {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .footer .footer_inner {
+        padding-bottom: 0 !important;
+        min-height: 0 !important;
+    }
+
+    /* 3. 주소(마지막 요소) 밑의 마진 제거 */
+    .info_text p:last-child, 
+    .info_line:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* footer 직접 만들어서 붙여보기 끝 */
+
+
 /* 1. 진료과목 섹션 전체 상하 공백 축소 */
 .section_subject {
     padding-top: 30px !important;
@@ -165,7 +371,8 @@
     /* 1. 부모 컨테이너 정렬 초기화: 왼쪽 끝에서 시작하도록 강제 */
     .area_inner {
         display: flex !important;
-        justify-content: flex-start !important; /* 중앙 정렬 해제 */
+        justify-content: flex-start !important;
+        /* 중앙 정렬 해제 */
         align-items: center !important;
         padding: 0 !important;
         width: 100% !important;
@@ -178,10 +385,12 @@
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-        overflow-x: auto !important; /* 스크롤 활성화 */
+        overflow-x: auto !important;
+        /* 스크롤 활성화 */
         overflow-y: hidden !important;
         -webkit-overflow-scrolling: touch;
-        text-align: left !important; /* 텍스트 정렬 왼쪽으로 */
+        text-align: left !important;
+        /* 텍스트 정렬 왼쪽으로 */
     }
 
     /* 3. 메뉴 리스트: 시작 지점 보정 */
@@ -190,7 +399,8 @@
         flex-wrap: nowrap !important;
         width: max-content !important;
         margin: 0 !important;
-        padding: 0 10px !important; /* 왼쪽 최소 여백만 부여 */
+        padding: 0 10px !important;
+        /* 왼쪽 최소 여백만 부여 */
         list-style: none !important;
         justify-content: flex-start !important;
     }
@@ -743,171 +953,6 @@
     }
 
     /* 지도 페이지 수정 끝 */
-
-
-
-    /* 모바일 footer 변경 */
-    /* ========================================================== */
-    /* 1. 푸터 컨테이너 초기화 및 모바일 기본 설정 */
-    /* ========================================================== */
-    .footer {
-        z-index: 100 !important;
-        /* 배경색은 유지하거나 모바일 전용색으로 변경 가능 */
-        background-color: #000 !important;
-
-        padding-top: 50px !important;
-        margin-bottom: 80px !important;
-        /* 하단 고정 버튼 두께만큼 띄우기 */
-    }
-
-    /* section_footer: 고정 너비 해제 및 전체 너비 사용 */
-    .footer .section_footer {
-        width: 100% !important;
-        /* 고정 너비 1100px 해제 */
-        padding: 30px 20px !important;
-        /* 상하 패딩 줄이고 좌우 여백 확보 */
-        margin: 0 auto !important;
-        position: static !important;
-        /* absolute 해제 */
-    }
-
-    /* section_footer:after (clearfix) 유지 */
-    .footer .section_footer:after {
-        content: "" !important;
-        display: block !important;
-        clear: both !important;
-    }
-
-    /* footer_inner: 플렉스 적용 및 패딩 해제 */
-    .footer .footer_inner {
-        min-height: auto !important;
-        padding-right: 0 !important;
-        /* 데스크톱용 오른쪽 패딩 제거 */
-
-        /* 💡 위아래 배치와 중앙 정렬을 위한 Flexbox 설정 */
-        display: flex !important;
-        flex-direction: column !important;
-        /* 세로(위아래) 배치 강제 */
-        align-items: center !important;
-        /* 항목들을 가로 중앙 정렬 강제 */
-        text-align: center !important;
-        /* 내부 텍스트 중앙 정렬 */
-    }
-
-    /* ========================================================== */
-    /* 2. search와 sns 영역 배치 및 정렬 */
-    /* ========================================================== */
-
-    /* area_search: 블록으로 변경 및 중앙 정렬 */
-    .footer .area_search {
-        display: block !important;
-        /* 인라인 블록 해제 -> 블록으로 변경 */
-        width: 100% !important;
-        /* 100% 너비 확보 */
-        min-width: 280px !important;
-        /* 모바일 최소 너비 설정 (옵션) */
-        height: auto !important;
-        /* 높이 자동 */
-        margin: 15px auto 15px auto !important;
-        /* 위아래 마진, 좌우 자동(중앙 정렬) */
-        text-align: center !important;
-        /* 내부 요소 중앙 정렬 */
-        line-height: normal !important;
-        /* 라인 높이 초기화 */
-        border: none !important;
-        /* 테두리 제거 (디자인에 따라) */
-        background-color: transparent !important;
-        /* 배경색 투명 (디자인에 따라) */
-    }
-
-    /* area_search 내부 키워드 */
-    .footer .area_search .keyword {
-        display: inline-block !important;
-        /* 블록 해제, 인라인 블록 유지 */
-        padding: 0 10px !important;
-        /* 패딩 조정 */
-        text-align: center !important;
-        /* 텍스트 중앙 정렬 */
-        line-height: 45px !important;
-        /* 높이를 맞추기 위한 라인 높이 */
-        border: 1px solid #333 !important;
-        /* 모바일에서 테두리 재설정 */
-        background-color: #000 !important;
-    }
-
-    /* area_search 화살표 제거 (선택 사항) */
-    .footer .area_search:after {
-        display: none !important;
-    }
-
-    /* area_sns: absolute 해제 및 위아래 배치 */
-    .footer .area_sns.is_change {
-        position: static !important;
-        /* absolute 해제 (겹침의 주요 원인) */
-        right: auto !important;
-        top: auto !important;
-        margin-top: 20px !important;
-        /* 검색 영역과 간격 확보 */
-        text-align: center !important;
-        /* 내부 SNS 버튼 중앙 정렬 */
-    }
-
-    /* SNS 버튼 크기와 간격 조정 */
-    .footer .area_sns.is_change .btn_sns {
-        font-size: 28px !important;
-        /* 버튼 크기 조정 */
-        display: inline-block !important;
-        vertical-align: middle !important;
-    }
-
-    /* SNS 버튼 구분자 (점) 마진 조정 */
-    .footer .area_sns.is_change .btn_sns:before {
-        margin: 10px 10px 0 6px !important;
-    }
-
-    /* ========================================================== */
-    /* 3. 기타 정보 영역 모바일 대응 */
-    /* ========================================================== */
-
-    /* list_info 항목: 가로가 좁을 경우 줄 바꿈 허용 */
-    .footer .list_info>li {
-        display: block !important;
-        /* 인라인 블록 해제 -> 블록으로 변경 */
-        white-space: normal !important;
-        /* 줄 바꿈 허용 */
-        text-align: center !important;
-        margin-bottom: 5px !important;
-        /* 구분자 제거 */
-        background-image: none !important;
-    }
-
-    /* list_info 구분점 제거 */
-    .footer .list_info>li:after {
-        display: none !important;
-    }
-
-    /* area_account (계좌 정보 등): 플로팅 해제 및 블록화 */
-    .footer .area_account {
-        float: none !important;
-        width: 100% !important;
-        margin-top: 15px !important;
-    }
-
-    /* section_notice (하단 공지/저작권): 가로 너비 해제 및 중앙 정렬 */
-    .footer .section_notice .text {
-        width: 100% !important;
-        padding: 0 20px !important;
-        margin: 0 !important;
-        text-align: center !important;
-    }
-
-    .footer .section_notice .copyright {
-        float: none !important;
-        /* 플로팅 해제 */
-        display: block !important;
-        text-align: center !important;
-        margin: 5px 0 0 0 !important;
-    }
 
 }
 
