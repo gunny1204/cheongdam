@@ -1007,32 +1007,45 @@
         </ul>
         <!-- //우측 고정 버튼 -->
 
-        <div class="footer _footer" role="contentinfo">
+        <footer class="footer _footer" role="contentinfo">
           <div class="section_footer">
-
             <div class="footer_inner">
-              <div class="area_search">
-                <a href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%B2%AD%EB%8B%B4%ED%95%9C%EB%B9%9B%EC%95%88%EA%B3%BC%40"
-                  target="_blank"><span class="keyword">청담한빛안과@</span></a>
 
+              <div class="mobile_top_area">
+                <a href="#" class="btn_up_final" role="button"
+                  onclick="jQuery('._fcWrap, html, body').animate({scrollTop: 0}, 400); return false;">
+                  위로 가기
+                </a>
               </div>
 
+              <div class="footer_flex_container">
+                <div class="area_hospital_info">
+                  <p class="copyright">© 2025 · 청담한빛안과의원 all rights reserved.</p>
+                  <div class="info_text">
+                    <p>전화번호 : <a href="tel:02-512-2955">02-512-2955</a></p>
+                    <p>진료시간 : 평일 09:30~18:30 | 토요일 09:00~13:00 (점심시간 없음)</p>
+                    <p>주소 : 서울특별시 강남구 청담동 43-9</p>
+                  </div>
+                </div>
 
-              <!-- [D] 계좌정보 없을경우 is_change 클래스 추가 -->
-              <div class="area_sns is_change">
-                <!-- <a href="index.html#" target="_blank" class="btn_sns nicon_blog _btn_blog"><span class="blind">네이버
-                    블로그</span></a> -->
-                <a href="index.html#" target="_blank" class="btn_sns nicon_cafe _btn_cafe"><span class="blind">네이버
-                    카페</span></a>
-                <a href="index.html#" target="_blank" class="btn_sns nicon_facebook _btn_facebook"><span
-                    class="blind">페이스북</span></a>
-                <a href="index.html#" target="_blank" class="btn_sns nicon_band _btn_band"><span class="blind">네이버
-                    밴드</span></a>
+                <div class="area_aside pc_only_area">
+                  <div class="area_search">
+                    <a href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%B2%AD%EB%8B%B4%ED%95%9C%EB%B9%9B%EC%95%88%EA%B3%BC%40"
+                      target="_blank">
+                      <span class="keyword">청담한빛안과@</span>
+                    </a>
+                  </div>
+                  <div class="area_sns">
+                    <a href="#" target="_blank" class="btn_sns nicon_cafe"></a>
+                    <a href="#" target="_blank" class="btn_sns nicon_facebook"></a>
+                    <a href="#" target="_blank" class="btn_sns nicon_band"></a>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
-
-        </div>
+        </footer>
 
       </div>
     </div>

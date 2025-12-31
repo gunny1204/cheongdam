@@ -5,7 +5,7 @@
 /* [1. 공통 기본 스타일] */
 
 .footer._footer {
-    background-color: #3d2b1f !important;
+    background-color: #000000 !important;
     color: #fff !important;
     padding: 15px 0 !important; /* 위아래 여백을 15px로 극단적으로 줄임 */
     text-align: center;
@@ -133,6 +133,45 @@
         vertical-align: middle !important;
         margin: 0 !important; /* 기존 불필요한 마진 제거 */
     }
+
+    /* 1. 우측 영역 전체 정렬 */
+    .area_aside.pc_only_area {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important; /* 오른쪽 끝으로 정렬 */
+        gap: 15px !important; /* 검색창과 SNS 사이 간격 */
+    }
+
+    /* 1. SNS 아이콘을 감싸는 박스 크기 확대 */
+    .area_sns a, .area_sns .btn_sns {
+        display: inline-flex !important; /* flex로 변경하여 중앙 정렬 활성화 */
+        align-items: center !important;   /* 세로 중앙 */
+        justify-content: center !important; /* 가로 중앙 */
+        width: 44px !important;  /* 박스 크기를 더 크게(44px) */
+        height: 44px !important;
+        background-color: rgba(255, 255, 255, 0.15) !important; /* 배경을 좀 더 선명하게 */
+        border-radius: 10px !important;
+        margin-left: 10px !important;
+        transition: all 0.2s ease !important;
+        overflow: hidden !important;
+    }
+
+    /* 2. 내부 아이콘 이미지 크기 및 강제 중앙화 */
+    .area_sns img, 
+    .area_sns .icon,
+    .area_sns [class^="icon_"] {
+        width: 32px !important;  /* 아이콘 자체 크기도 확대 */
+        height: 32px !important;
+        display: block !important;
+        margin: 0 auto !important; /* 혹시 모를 치우침 방지 */
+        object-fit: contain !important;
+    }
+
+    /* 3. 마우스 올렸을 때 효과 */
+    .area_sns a:hover {
+        background-color: #ffffff !important;
+        transform: scale(1.1) !important; /* 크기가 살짝 커지는 효과 추가 */
+    }
 }
 
 /* [3. 모바일 환경: 768px 이하] */
@@ -155,19 +194,50 @@
     }
 
     .btn_up {
-        display: inline-block;
+        display: inline-block !important;
+        background-color: #ffeb3b !important; /* 노란색 배경 */
+        color: #3d2b1f !important;           /* 밤색 글씨 */
+        padding: 12px 40px !important;       /* 클릭하기 편하게 더 넓게 */
+        border-radius: 30px !important;
+        font-weight: bold !important;
+        text-decoration: none !important;
+        font-size: 15px !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); /* 터치 시 파란 박스 방지 */display: inline-block !important;
+        background-color: #ffeb3b !important; /* 노란색 배경 */
+        color: #3d2b1f !important;           /* 밤색 글씨 */
+        padding: 12px 40px !important;       /* 클릭하기 편하게 더 넓게 */
+        border-radius: 30px !important;
+        font-weight: bold !important;
+        text-decoration: none !important;
+        font-size: 15px !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); /* 터치 시 파란 박스 방지 */
+    }
 
-        position: relative !important;
-        z-index: 10000 !important;
-        pointer-events: auto !important; /* 클릭 이벤트 강제 활성화 */
-        
-        background-color: #ffeb3b;
+    .btn_up_final {
+        display: inline-block !important;
+        background-color: #ffeb3b !important;
         color: #3d2b1f !important;
-        padding: 8px 30px;
-        border-radius: 20px;
-        font-weight: bold;
-        font-size: 14px;
-        text-decoration: none;
+        padding: 12px 45px !important;
+        border-radius: 30px !important;
+        font-weight: bold !important;
+        text-decoration: none !important;
+        font-size: 15px !important;
+        box-shadow: 0 4px 0 #d4c22f !important; /* 입체감을 위한 하단 그림자 */
+        transition: all 0.1s ease !important;
+        cursor: pointer !important;
+        position: relative !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    /* 버튼을 눌렀을 때(터치 시)의 반응 */
+    .btn_up_final:active {
+        box-shadow: 0 1px 0 #d4c22f !important; /* 그림자가 줄어들며 */
+        transform: translateY(3px) !important; /* 버튼이 아래로 3px 내려감 (누르는 느낌) */
+        background-color: #fdd835 !important; /* 색상도 살짝 진해짐 */
     }
 
     .footer._footer {
