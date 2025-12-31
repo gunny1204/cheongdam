@@ -223,7 +223,12 @@
     /* 2. 팝업 본체: 가로 길이를 시스템 규격인 288px로 고정 */
     .custom-modal-content {
       background: #fff;
-      width: 288px;
+
+      /* width: 288px; */
+      width: 90% !important;
+      max-width: 320px !important;
+      /* 아무리 커져도 320px은 넘지 않게 설정 */
+
       /* 시스템 팝업 실측 정밀 사이즈 */
       border-radius: 0px;
       text-align: center;
@@ -642,7 +647,8 @@
                       </ul>
 
                       <div class="cta-buttons">
-                        <a href="tel:02-512-2955" class="btn btn-primary shadow">빠른 예약</a>
+                        <!-- <a href="tel:02-512-2955" class="btn btn-primary shadow">빠른 예약</a> -->
+                        <a href="tel:02-512-2955" id="quickReserve" class="btn btn-outline">빠른 예약</a>
                         <a href="#" class="btn btn-outline" onclick="openTimeModal(); return false;">진료 시간 확인</a>
                         <a href="index.html@link=pt7raae2.html" class="btn btn-outline">오시는 길</a>
                       </div>
@@ -665,6 +671,10 @@
                           </div>
                         </div>
                       </div>
+
+                      <!--  -->
+                      <div id="reserveModal-placeholder"></div>
+                      <!--  -->
 
                       <div class="component_box _component" data-index="2">
                         <div class="division_line">
@@ -836,6 +846,7 @@
   <script type="text/javascript" src="../js/footer_add.js"></script>
 
   <script>
+
     function openTimeModal() {
       const modal = document.getElementById('timeModal');
       modal.style.display = 'flex';

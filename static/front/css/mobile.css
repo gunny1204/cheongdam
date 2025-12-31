@@ -1,3 +1,55 @@
+/* 1. 팝업 전체 폰트 설정 */
+.custom-modal-content {
+    font-family: 'Nanum Gothic', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif !important;
+    color: #333 !important; /* 이미지와 비슷한 진회색 */
+}
+
+/* 2. 상단 헤더 (전화번호 안내 부분) */
+.custom-modal-header {
+    font-weight: 800 !important; /* 이미지의 '전화번호' 글씨처럼 아주 두껍게 */
+    font-size: 18px !important;
+    color: #ffffff !important;
+    background-color: #4d555e !important; /* 이미지 상단바의 어두운 회색 */
+}
+
+/* 3. 병원명 ("청담한빛안과" 입니다) */
+.hospital-name {
+    font-weight: 600 !important;
+    font-size: 17px !important;
+    margin-top: 20px !important;
+    color: #222 !important;
+}
+
+/* 4. 전화번호 (초록색 강조 부분) */
+#reserveModal .time-info-container p:first-child {
+    font-family: 'Arial', sans-serif !important; /* 숫자는 Arial이 더 깔끔합니다 */
+    font-weight: 700 !important;
+    font-size: 28px !important; /* 이미지처럼 크고 시원하게 */
+    color: #00ff42 !important; /* 이미지의 밝은 연두색 수치 */
+    letter-spacing: -1px !important;
+    margin: 15px 0 !important;
+}
+
+/* 5. 하단 안내 문구 */
+.sub-text {
+    font-size: 14px !important;
+    color: #888 !important;
+    font-weight: 400 !important;
+}
+
+/* 6. 확인 버튼 (이미지 하단 검정 버튼 스타일) */
+#reserveModal .confirm-btn {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 10px 30px !important;
+    border-radius: 12px !important; /* 이미지처럼 둥근 사각형 */
+    border: none !important;
+}
+
+
+
+
 /* footer 직접 만들어서 붙여보기 시작 */
 /* 푸터 기본 배경 (이미지 톤) */
 /* 전체 배경 및 높이 축소 */
@@ -7,26 +59,31 @@
 .footer._footer {
     background-color: #000000 !important;
     color: #fff !important;
-    padding: 15px 0 !important; /* 위아래 여백을 15px로 극단적으로 줄임 */
+    padding: 15px 0 !important;
+    /* 위아래 여백을 15px로 극단적으로 줄임 */
     text-align: center;
     /* 모바일 기본값 */
 }
 
 /* 1. 기존 section_footer의 과도한 패딩 제거 */
 .footer .section_footer {
-    width: 100% !important; /* 고정폭 1100px 해제 */
-    max-width: 1200px !important; /* 원하는 최대폭 설정 */
-    padding: 20px 0 !important; /* 58px에서 20px로 대폭 축소 */
+    width: 100% !important;
+    /* 고정폭 1100px 해제 */
+    max-width: 1200px !important;
+    /* 원하는 최대폭 설정 */
+    padding: 20px 0 !important;
+    /* 58px에서 20px로 대폭 축소 */
     margin: 0 auto !important;
 }
 
 .footer .footer_inner {
     /* 1. 가로 구조 잡기 */
-    max-width: 1100px; /* 상황에 따라 1200px~1300px로 넓혀도 좋습니다 */
+    max-width: 1100px;
+    /* 상황에 따라 1200px~1300px로 넓혀도 좋습니다 */
     margin: 0 auto;
-    
+
     /* 2. 기존 테마의 불필요한 여백/높이 강제 해제 (다이어트 핵심) */
-    min-height: 0 !important; 
+    min-height: 0 !important;
     padding-right: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -49,10 +106,12 @@
     .mobile_top_area {
         display: none !important;
     }
+
     .footer_flex_container {
         display: flex !important;
         justify-content: space-between !important;
-        align-items: center !important; /* 수직 중앙 정렬로 높이 최적화 */
+        align-items: center !important;
+        /* 수직 중앙 정렬로 높이 최적화 */
         padding: 0 20px !important;
     }
 
@@ -63,13 +122,17 @@
     .area_aside.pc_only_area {
         text-align: right !important;
     }
+
     /* 1. 병원 정보 컨테이너 자체를 왼쪽 끝으로 */
     .area_hospital_info {
-        text-align: left !important; /* 텍스트 좌측 정렬 */
-        flex: 1 !important; /* 남는 공간을 차지하여 검색창을 우측으로 밀어냄 */
+        text-align: left !important;
+        /* 텍스트 좌측 정렬 */
+        flex: 1 !important;
+        /* 남는 공간을 차지하여 검색창을 우측으로 밀어냄 */
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important; /* 내부 요소들을 왼쪽 시작점에 맞춤 */
+        align-items: flex-start !important;
+        /* 내부 요소들을 왼쪽 시작점에 맞춤 */
     }
 
     /* 2. 개별 텍스트 줄 정렬 확인 */
@@ -78,7 +141,8 @@
         width: 100% !important;
     }
 
-    .info_text p, .info_line {
+    .info_text p,
+    .info_line {
         text-align: left !important;
         margin-left: 0 !important;
         padding-left: 0 !important;
@@ -91,14 +155,16 @@
     }
 
     .footer_inner {
-        max-width: 1300px !important; /* 폭을 1100에서 1300으로 확장하여 더 넓게 배치 */
+        max-width: 1300px !important;
+        /* 폭을 1100에서 1300으로 확장하여 더 넓게 배치 */
         padding: 0 20px !important;
         margin: 0 auto;
     }
 
     .footer_flex_container {
         display: flex !important;
-        justify-content: space-between !important; /* 좌우 끝으로 확실히 밀어냄 */
+        justify-content: space-between !important;
+        /* 좌우 끝으로 확실히 밀어냄 */
         align-items: flex-end !important;
         width: 100% !important;
     }
@@ -107,8 +173,10 @@
     .area_aside.pc_only_area {
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-end !important; /* 우측 끝 정렬 */
-        min-width: 250px; /* 영역 확보 */
+        align-items: flex-end !important;
+        /* 우측 끝 정렬 */
+        min-width: 250px;
+        /* 영역 확보 */
     }
 
     /* 3. 검색창 디자인 보정 */
@@ -121,35 +189,47 @@
     /* 4. SNS 아이콘 가로 정렬 및 수직 중앙 맞춤 */
     .area_sns {
         display: flex !important;
-        flex-direction: row !important; /* 가로 나열 강제 */
+        flex-direction: row !important;
+        /* 가로 나열 강제 */
         justify-content: flex-end !important;
-        align-items: center !important; /* 아이콘들 높이 맞춤 */
+        align-items: center !important;
+        /* 아이콘들 높이 맞춤 */
         gap: 15px !important;
-        height: 32px; /* SNS 영역 높이 고정 */
+        height: 32px;
+        /* SNS 영역 높이 고정 */
     }
 
     .btn_sns {
         display: inline-block !important;
         vertical-align: middle !important;
-        margin: 0 !important; /* 기존 불필요한 마진 제거 */
+        margin: 0 !important;
+        /* 기존 불필요한 마진 제거 */
     }
 
     /* 1. 우측 영역 전체 정렬 */
     .area_aside.pc_only_area {
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-end !important; /* 오른쪽 끝으로 정렬 */
-        gap: 15px !important; /* 검색창과 SNS 사이 간격 */
+        align-items: flex-end !important;
+        /* 오른쪽 끝으로 정렬 */
+        gap: 15px !important;
+        /* 검색창과 SNS 사이 간격 */
     }
 
     /* 1. SNS 아이콘을 감싸는 박스 크기 확대 */
-    .area_sns a, .area_sns .btn_sns {
-        display: inline-flex !important; /* flex로 변경하여 중앙 정렬 활성화 */
-        align-items: center !important;   /* 세로 중앙 */
-        justify-content: center !important; /* 가로 중앙 */
-        width: 44px !important;  /* 박스 크기를 더 크게(44px) */
+    .area_sns a,
+    .area_sns .btn_sns {
+        display: inline-flex !important;
+        /* flex로 변경하여 중앙 정렬 활성화 */
+        align-items: center !important;
+        /* 세로 중앙 */
+        justify-content: center !important;
+        /* 가로 중앙 */
+        width: 44px !important;
+        /* 박스 크기를 더 크게(44px) */
         height: 44px !important;
-        background-color: rgba(255, 255, 255, 0.15) !important; /* 배경을 좀 더 선명하게 */
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        /* 배경을 좀 더 선명하게 */
         border-radius: 10px !important;
         margin-left: 10px !important;
         transition: all 0.2s ease !important;
@@ -157,20 +237,23 @@
     }
 
     /* 2. 내부 아이콘 이미지 크기 및 강제 중앙화 */
-    .area_sns img, 
+    .area_sns img,
     .area_sns .icon,
     .area_sns [class^="icon_"] {
-        width: 32px !important;  /* 아이콘 자체 크기도 확대 */
+        width: 32px !important;
+        /* 아이콘 자체 크기도 확대 */
         height: 32px !important;
         display: block !important;
-        margin: 0 auto !important; /* 혹시 모를 치우침 방지 */
+        margin: 0 auto !important;
+        /* 혹시 모를 치우침 방지 */
         object-fit: contain !important;
     }
 
     /* 3. 마우스 올렸을 때 효과 */
     .area_sns a:hover {
         background-color: #ffffff !important;
-        transform: scale(1.1) !important; /* 크기가 살짝 커지는 효과 추가 */
+        transform: scale(1.1) !important;
+        /* 크기가 살짝 커지는 효과 추가 */
     }
 }
 
@@ -183,38 +266,49 @@
     }
 
     .footer .section_footer {
-        padding: 25px 0 100px !important; /* 모바일 하단바 여백 고려 */
+        padding: 25px 0 100px !important;
+        /* 모바일 하단바 여백 고려 */
     }
 
     /* 위로 가기 버튼 스타일 */
     .mobile_top_area {
         display: block !important;
-        z-index: 9999 !important; /* 최상단 레이어로 설정하여 클릭 방해 차단 */
+        z-index: 9999 !important;
+        /* 최상단 레이어로 설정하여 클릭 방해 차단 */
         margin-bottom: 25px;
     }
 
     .btn_up {
         display: inline-block !important;
-        background-color: #ffeb3b !important; /* 노란색 배경 */
-        color: #3d2b1f !important;           /* 밤색 글씨 */
-        padding: 12px 40px !important;       /* 클릭하기 편하게 더 넓게 */
+        background-color: #ffeb3b !important;
+        /* 노란색 배경 */
+        color: #3d2b1f !important;
+        /* 밤색 글씨 */
+        padding: 12px 40px !important;
+        /* 클릭하기 편하게 더 넓게 */
         border-radius: 30px !important;
         font-weight: bold !important;
         text-decoration: none !important;
         font-size: 15px !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer !important;
-        -webkit-tap-highlight-color: rgba(0,0,0,0); /* 터치 시 파란 박스 방지 */display: inline-block !important;
-        background-color: #ffeb3b !important; /* 노란색 배경 */
-        color: #3d2b1f !important;           /* 밤색 글씨 */
-        padding: 12px 40px !important;       /* 클릭하기 편하게 더 넓게 */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        /* 터치 시 파란 박스 방지 */
+        display: inline-block !important;
+        background-color: #ffeb3b !important;
+        /* 노란색 배경 */
+        color: #3d2b1f !important;
+        /* 밤색 글씨 */
+        padding: 12px 40px !important;
+        /* 클릭하기 편하게 더 넓게 */
         border-radius: 30px !important;
         font-weight: bold !important;
         text-decoration: none !important;
         font-size: 15px !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer !important;
-        -webkit-tap-highlight-color: rgba(0,0,0,0); /* 터치 시 파란 박스 방지 */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        /* 터치 시 파란 박스 방지 */
     }
 
     .btn_up_final {
@@ -226,7 +320,8 @@
         font-weight: bold !important;
         text-decoration: none !important;
         font-size: 15px !important;
-        box-shadow: 0 4px 0 #d4c22f !important; /* 입체감을 위한 하단 그림자 */
+        box-shadow: 0 4px 0 #d4c22f !important;
+        /* 입체감을 위한 하단 그림자 */
         transition: all 0.1s ease !important;
         cursor: pointer !important;
         position: relative !important;
@@ -235,9 +330,12 @@
 
     /* 버튼을 눌렀을 때(터치 시)의 반응 */
     .btn_up_final:active {
-        box-shadow: 0 1px 0 #d4c22f !important; /* 그림자가 줄어들며 */
-        transform: translateY(3px) !important; /* 버튼이 아래로 3px 내려감 (누르는 느낌) */
-        background-color: #fdd835 !important; /* 색상도 살짝 진해짐 */
+        box-shadow: 0 1px 0 #d4c22f !important;
+        /* 그림자가 줄어들며 */
+        transform: translateY(3px) !important;
+        /* 버튼이 아래로 3px 내려감 (누르는 느낌) */
+        background-color: #fdd835 !important;
+        /* 색상도 살짝 진해짐 */
     }
 
     .footer._footer {
@@ -246,10 +344,13 @@
 
     /* 1. 최상위 푸터 여백 강제 축소 */
     .footer._footer {
-        padding-left: 20px !important;  /* 좌측 공백 */
-        padding-right: 20px !important; /* 우측 공백 */
+        padding-left: 20px !important;
+        /* 좌측 공백 */
+        padding-right: 20px !important;
+        /* 우측 공백 */
         padding-top: 20px !important;
-        padding-bottom: 30px !important; /* 기존 100px 가까이 되던 여백을 30px로 줄임 */
+        padding-bottom: 30px !important;
+        /* 기존 100px 가까이 되던 여백을 30px로 줄임 */
         min-height: auto !important;
     }
 
@@ -265,7 +366,7 @@
     }
 
     /* 3. 주소(마지막 요소) 밑의 마진 제거 */
-    .info_text p:last-child, 
+    .info_text p:last-child,
     .info_line:last-child {
         margin-bottom: 0 !important;
     }
@@ -630,8 +731,9 @@
 
         /* 🌟 추가: 문구가 한 줄로 표시되도록 강제 */
         /* 문장이 길어도 잘리지 않고 다음 줄로 넘어가게 설정 */
-        white-space: normal !important; 
-        word-break: keep-all !important; /* 한글 단어 단위로 예쁘게 줄바꿈 */
+        white-space: normal !important;
+        word-break: keep-all !important;
+        /* 한글 단어 단위로 예쁘게 줄바꿈 */
     }
 
     /* 컨텐츠 영역 */
@@ -1025,6 +1127,31 @@
     }
 
     /* 지도 페이지 수정 끝 */
+
+    /* 네이버 팝업 가로 사이즈 조정 시작 */
+    [class*="Layer"] ._layerContent,
+    .modoo_layer,
+    .ui-dialog {
+        width: 90% !important;
+        /* 화면 폭의 90%만 차지하게 강제 */
+        max-width: 320px !important;
+        /* 최대 폭 제한 */
+        left: 50% !important;
+        /* 중앙 정렬 */
+        transform: translateX(-50%) !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 팝업 내부의 긴 텍스트 줄바꿈 처리 */
+    [class*="Layer"] .content_area,
+    [class*="Layer"] .text {
+        word-break: break-all !important;
+        white-space: normal !important;
+        padding: 20px 15px !important;
+        /* 내부 여백 확보 */
+    }
+
+    /* 사이즈 조정 끝 */
 
 }
 
