@@ -166,6 +166,11 @@
       padding: 20px;
       border-radius: 8px;
       margin-top: 30px;
+
+      white-space: normal !important;
+      word-break: keep-all !important;
+      vertical-align: middle;
+      /* 글자가 줄바꿈될 때 중앙 정렬 유지 */
     }
 
     .warning-box h4 {
@@ -265,6 +270,11 @@
     .pros {
       color: #2e7d32;
       margin-bottom: 8px;
+
+      white-space: normal !important;
+      word-break: keep-all !important;
+      vertical-align: middle;
+      /* 글자가 줄바꿈될 때 중앙 정렬 유지 */
     }
 
     .pros strong {
@@ -276,6 +286,11 @@
 
     .cons {
       color: #c62828;
+
+      white-space: normal !important;
+      word-break: keep-all !important;
+      vertical-align: middle;
+      /* 글자가 줄바꿈될 때 중앙 정렬 유지 */
     }
 
     .cons strong {
@@ -296,6 +311,17 @@
 
     .misight {
       border-left: 4px solid #3498db;
+    }
+
+    td {
+      white-space: normal !important;
+      word-break: keep-all !important;
+      vertical-align: middle;
+      /* 글자가 줄바꿈될 때 중앙 정렬 유지 */
+      line-height: 1.4 !important;
+      /* 줄바꿈 시 가독성을 위한 간격 */
+      padding: 10px 5px !important;
+      /* 모바일 대응 여백 */
     }
   </style>
 
@@ -745,6 +771,8 @@
                     <h2 class="section-title">고도근시가 가져올 수 있는 위험한 징후들</h2>
                     <p class="warning-intro">안구가 길어지며 망막과 시신경이 한계치까지 얇아지면, 성인이 된 후 다음과 같은 실명 질환 위험이 급격히 높아집니다.</p>
 
+
+                    <br>
                     <div class="danger-signs">
                       <div class="sign-card">
                         <div class="sign-icon">⚠️</div>
@@ -753,6 +781,7 @@
                           <p>얇아진 망막이 찢어지거나 벌어져 시력을 잃게 되는 응급 질환</p>
                         </div>
                       </div>
+                      <br>
                       <div class="sign-card">
                         <div class="sign-icon">⚠️</div>
                         <div class="sign-content">
@@ -760,6 +789,7 @@
                           <p>안구 신장으로 인해 시력의 중심인 황반에 변성이 일어나는 질환</p>
                         </div>
                       </div>
+                      <br>
                       <div class="sign-card">
                         <div class="sign-icon">⚠️</div>
                         <div class="sign-content">
@@ -768,7 +798,7 @@
                         </div>
                       </div>
                     </div>
-
+                    <br>
                     <div class="bottom-cta">
                       <p>"우리 아이의 10년 뒤 눈 건강, 지금 시작해야 합니다."</p>
                       <div class="cta-buttons">
