@@ -629,7 +629,9 @@
         text-align: center;
 
         /* 🌟 추가: 문구가 한 줄로 표시되도록 강제 */
-        white-space: nowrap;
+        /* 문장이 길어도 잘리지 않고 다음 줄로 넘어가게 설정 */
+        white-space: normal !important; 
+        word-break: keep-all !important; /* 한글 단어 단위로 예쁘게 줄바꿈 */
     }
 
     /* 컨텐츠 영역 */
