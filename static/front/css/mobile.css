@@ -700,6 +700,9 @@
         padding: 20px !important;
         box-sizing: border-box;
         text-align: center;
+
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
     }
 
     .section_spot .spot_homesite .site_name {
@@ -736,6 +739,16 @@
         /* 한글 단어 단위로 예쁘게 줄바꿈 */
     }
 
+    /* 모바일 상단 제목 아래 설명을 숨깁니다 */
+    .section_spot .spot_homesite .site_description {
+        display: none !important;
+    }
+
+    /* 설명이 사라진 뒤 생기는 여백을 더 줄이고 싶다면 아래 코드도 추가 */
+    .section_spot.is_intro .spot_homesite {
+        padding-bottom: 10px !important;
+    }
+
     /* 컨텐츠 영역 */
     .content {
         width: 100%;
@@ -769,12 +782,17 @@
 
         /* 패딩 초기화 (내부 intro_section에서 패딩 처리) */
         padding: 0 !important;
+
+        padding-top: 10px !important; /* 최소한의 여백만 남김 */
+        margin-top: -15px !important; /* 필요시 제목 영역 쪽으로 살짝 끌어올림 */
     }
 
     .uio_box.intro_box .uio_content {
         display: block !important;
         width: 100%;
         box-sizing: border-box;
+
+        padding-top: 0 !important;
     }
 
     /* 🚨 4. 내부 텍스트 섹션의 패딩 유지 */
@@ -785,7 +803,7 @@
         text-align: left;
 
         /* 텍스트가 붙지 않도록 좌우 20px 여백 재적용 */
-        padding: 20px 20px 0 20px;
+        padding: 0px 20px 0 20px;
     }
 
     /* 소개 텍스트 스타일 */

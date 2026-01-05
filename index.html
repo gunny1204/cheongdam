@@ -65,9 +65,11 @@
   <style>
     /* 기본 스타일 */
     .main-hero {
-      padding: 80px 20px;
+      /* padding: 80px 20px; */
+      padding: 20px 20px;
       text-align: center;
-      background-color: #f8f9fa;
+      /* background-color: #f8f9fa; */
+      background-color: #fff;
       font-family: 'Pretendard', sans-serif;
     }
 
@@ -158,25 +160,79 @@
         font-size: 1.8rem;
       }
 
-      .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-
-        /* 하단 바 두께를 고려하여 버튼 아래에 충분한 공간 확보 */
-        margin-bottom: 120px !important;
-
-        /* 버튼들이 세로로 배치될 때 간격 조절 (선택 사항) */
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 15px;
-        /* 좌우 여백 */
+      
+      /* 1. 리스트 전체 컨테이너에 좌우 여백 추가 */
+      .feature-list {
+        padding-left: 20px !important;
+        /* 좌측 여백 */
+        padding-right: 20px !important;
+        /* 우측 여백 */
+        box-sizing: border-box !important;
+        /* 여백이 너비에 포함되도록 설정 */
       }
 
-      .btn {
-        text-align: center;
+      /* 2. 만약 개별 아이템(li) 간의 간격을 조절하고 싶다면 */
+      .feature-list li {
+        margin-bottom: 15px !important;
+        /* 위아래 간격도 살짝 주면 더 보기 좋습니다 */
+      }
+
+      /* 3. 텍스트가 시작되는 부분에 추가 여백이 필요한 경우 */
+      .feature-list .text_area {
+        padding-left: 10px !important;
+      }
+
+      /* feature-list 내의 모든 텍스트에 단어 단위 줄바꿈 적용 */
+      .feature-list .text_area,
+      .feature-list li,
+      .feature-list p {
+        /* 단어 중간에서 끊기지 않고 띄어쓰기 단위로 줄바꿈 */
+        word-break: keep-all !important;
+
+        /* 혹시 모를 상황을 대비해 긴 영어 단어 등은 깨지게 설정(선택사항) */
+        overflow-wrap: break-word !important;
+
+        /* 텍스트 정렬을 왼쪽으로 유지 (양쪽 정렬보다 가독성이 좋음) */
+        text-align: left !important;
+      }
+
+      
+
+      /* 버튼 컨테이너 조절 */
+      .cta-buttons {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center !important;
+        /* 중앙 정렬 */
+        gap: 8px !important;
+        /* 버튼 사이 간격 */
+        padding: 10px 15px !important;
+        /* 테두리 안쪽 여백 확보 */
+        flex-wrap: nowrap !important;
+        /* 한 줄 유지 (원하시면 wrap으로 변경 가능) */
+        width: 100% !important;
+        /* 부모 요소에 맞춤 */
+        box-sizing: border-box !important;
+      }
+
+      /* 개별 버튼 자동 조절 */
+      .cta-buttons .btn {
+        flex: 1 !important;
+        /* 중요: 모든 버튼이 같은 비율로 공간 차지 */
+        min-width: 0 !important;
+        /* flex 박스 안에서 버튼이 작아질 수 있게 허용 */
+        padding: 12px 5px !important;
+        /* 좌우 여백을 줄여 글자가 잘리지 않게 함 */
+        font-size: 14px !important;
+        /* 모바일 최적화 폰트 크기 */
+        text-align: center !important;
+        white-space: nowrap !important;
+        /* 글자 줄바꿈 방지 */
+        overflow: hidden !important;
+        /* 넘치는 부분 숨김 */
+        text-overflow: ellipsis !important;
+        /* 혹시나 글자가 길면 ... 처리 */
+        box-sizing: border-box !important;
       }
 
       .mobile-only {
@@ -625,8 +681,9 @@
                   <div class="container">
                     <div class="hero-content">
                       <h1 class="main-title">
-                        “단순한 시력교정을 넘어,<br>
-                        <span>당신의 시력을 평생 보존합니다.</span>”
+                        <!-- “단순한 시력교정을 넘어,<br>
+                        <span>당신의 시력을 평생 보존합니다.</span>” -->
+                        "실명질환을 진료하는 망막전문의의 정확하고 세심한 진료"
                       </h1>
 
                       <hr class="divider">
@@ -676,11 +733,11 @@
                       <div id="reserveModal-placeholder"></div>
                       <!--  -->
 
-                      <div class="component_box _component" data-index="2">
+                      <!-- <div class="component_box _component" data-index="2">
                         <div class="division_line">
                           <div class="line"></div>
                         </div>
-                      </div>
+                      </div> -->
 
                     </div>
                   </div>
