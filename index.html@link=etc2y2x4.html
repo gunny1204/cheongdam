@@ -119,7 +119,7 @@
                           <span class="menu_name">
                             <span class="text">진료과목</span>
                           </span>
-                          <span class="menu_num theme_background">5</span>
+                          <!-- <span class="menu_num theme_background">5</span> -->
                         </a>
                         <span class="selected_line theme_background"></span>
                       </li>
@@ -261,7 +261,7 @@
                   <div class="menu_name">
                     <span class="text">진료과목</span>
                   </div>
-                  <span class="menu_num theme_background">5</span>
+                  <!-- <span class="menu_num theme_background">5</span> -->
                 </a>
                 <!-- [D] 서브메뉴 펼침, 닫힘 버튼 -->
                 <button class="nicon_down2 _sideSubMenuOpen"><span class="blind">하위메뉴더보기</span></button>
@@ -359,7 +359,8 @@
                   <span class="uio_title_bullet theme_background"></span>
                   비급여 항목 안내
                 </h3>
-                <div class="main_area current" data-cid="etc2y2x4" data-anchor="50d149d34d63a4b9ad3e3853a7cd3078"
+
+                <!-- <div class="main_area current" data-cid="etc2y2x4" data-anchor="50d149d34d63a4b9ad3e3853a7cd3078"
                   data-adult-flag="0" data-title="비급여 항목 안내">
                   <div class="inner _inner">
                     <img src='../modo-phinf.pstatic.net/20230808_93/1691495516181FiJ3P_JPEG/mosaWE1rIL.jpeg'
@@ -368,9 +369,7 @@
                       style='display: none'>
                     <div class="component_box _component" data-index="0">
                       <div class="txt_box">
-                        <!-- <div class="txt_component color1 big align_l t_space " style="color:rgb(222, 151, 37)">
-                          <h4>비급여&nbsp;항목&nbsp;안내</h4>
-                        </div> -->
+                        
                       </div>
                     </div>
                     <div class="component_box _component" data-index="1">
@@ -405,6 +404,260 @@
                           </li>
                         </ul>
                       </div>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="main_area current" data-cid="etc2y2x4" data-anchor="50d149d34d63a4b9ad3e3853a7cd3078"
+                  data-adult-flag="0" data-title="비급여 항목 안내">
+                  <div class="inner _inner">
+
+                    <div class="component_box _component" data-index="0">
+                      <div class="txt_box" style="padding: 20px 15px 10px 15px;">
+                        <div class="txt_component"
+                          style="border-left: 4px solid #1a6dff; padding-left: 12px; margin-bottom: 15px;">
+                          <h4
+                            style="font-size: 20px; font-weight: bold; color: #222; margin: 0; letter-spacing: -0.5px;">
+                            비급여 항목 안내</h4>
+                          <p style="font-size: 13px; color: #666; margin: 5px 0 0 0;">청담한빛안과의 투명하고 정직한 비급여 진료비용 안내입니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="component_box component_margin _component" data-index="3" style="padding: 0 15px;">
+
+                      <style>
+                        .nonpay-responsive-wrapper {
+                          width: 100%;
+                          overflow-x: auto;
+                          -webkit-overflow-scrolling: touch;
+                          margin-bottom: 30px;
+                          border-top: 2px solid #1a6dff;
+                          border-radius: 4px;
+                        }
+
+                        .nonpay-table {
+                          width: 100%;
+                          min-width: 630px;
+                          border-collapse: collapse;
+                          font-family: 'Malgun Gothic', dotum, sans-serif;
+                          font-size: 14px;
+                          text-align: left;
+                        }
+
+                        .nonpay-table th {
+                          background-color: #f8f9fa;
+                          color: #333;
+                          font-weight: 600;
+                          padding: 12px 8px;
+                          border-bottom: 2px solid #dbdbdb;
+                          border-right: 1px solid #eef0f2;
+                          text-align: center;
+                          font-size: 13px;
+                        }
+
+                        .nonpay-table td {
+                          padding: 12px 10px;
+                          border-bottom: 1px solid #edeef0;
+                          border-right: 1px solid #f7f8f9;
+                          vertical-align: middle;
+                          color: #444;
+                          background-color: #ffffff;
+                        }
+
+                        .nonpay-table th:last-child,
+                        .nonpay-table td:last-child {
+                          border-right: none;
+                        }
+
+                        /* 왼쪽 대분류(구분) 칸 스타일 */
+                        .nonpay-table .category-text {
+                          font-weight: bold;
+                          color: #165fd4;
+                          background-color: #f4f7fa !important;
+                          /* 연한 회블루빛 배경 */
+                          border-right: 2px solid #d0d7de !important;
+                          font-size: 13px;
+                          line-height: 1.4;
+                        }
+
+                        /* 💡 핵심: 대분류 항목들이 바뀔 때 전체를 가로지르는 굵은 선 스타일 */
+                        .nonpay-table .section-divider td {
+                          border-top: 2.5px solid #a0b6d9 !important;
+                          /* 구분 칸까지 포함하여 굵은 블루그레이 선 적용 */
+                        }
+
+                        /* 행 마우스 오버 */
+                        .nonpay-table tbody tr:hover td {
+                          background-color: #f8fafc !important;
+                        }
+
+                        .nonpay-table tbody tr:hover .category-text {
+                          background-color: #edf2f7 !important;
+                        }
+
+                        .text-center {
+                          text-align: center !important;
+                        }
+
+                        .text-right {
+                          text-align: right !important;
+                          padding-right: 15px !important;
+                        }
+
+                        .price-text {
+                          font-weight: bold;
+                          color: #222;
+                        }
+
+                        .date-text {
+                          font-size: 12px;
+                          color: #888;
+                        }
+                      </style>
+
+                      <div class="nonpay-responsive-wrapper">
+                        <table class="nonpay-table">
+                          <thead>
+                            <tr>
+                              <th style="width: 20%;">구분</th>
+                              <th style="width: 20%;">명칭</th>
+                              <th style="width: 25%;">구분/상세</th>
+                              <th style="width: 20%;">비용 (원)</th>
+                              <th style="width: 15%;">최종변경일</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                            <tr>
+                              <td class="category-text text-center" rowspan="2">치료재료 / 보장구</td>
+                              <td>치료재료</td>
+                              <td>조절성 인공수정체</td>
+                              <td class="text-right price-text">1,500,000 - 3,650,000</td>
+                              <td class="text-center date-text">2026.05.01</td>
+                            </tr>
+                            <tr>
+                              <td>보장구</td>
+                              <td>드림렌즈 단안</td>
+                              <td class="text-right price-text">500,000 - 550,000</td>
+                              <td class="text-center date-text">2026.05.01</td>
+                            </tr>
+
+                            <tr class="section-divider">
+                              <td class="category-text text-center" rowspan="13">재증명수수료</td>
+                              <td rowspan="3">진단서</td>
+                              <td>일반 진단서</td>
+                              <td class="text-right price-text">20,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>영문 진단서</td>
+                              <td class="text-right price-text">20,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>장애정도심사용 진단서(장애진단서)</td>
+                              <td class="text-right price-text">15,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td rowspan="4">확인서</td>
+                              <td>입퇴원 확인서</td>
+                              <td class="text-right price-text">3,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>통원 확인서</td>
+                              <td class="text-right price-text">3,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>진료확인서 (코드 0)</td>
+                              <td class="text-right price-text">3,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>수술 확인서</td>
+                              <td class="text-right price-text">3,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td rowspan="2">진료기록사본</td>
+                              <td>진료기록사본 (1~5매, 매당)</td>
+                              <td class="text-right price-text">1,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>진료기록사본 (6매 이상, 매당)</td>
+                              <td class="text-right price-text">100</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>진료기록영상</td>
+                              <td>CD 발급</td>
+                              <td class="text-right price-text">10,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>제증명서 사본</td>
+                              <td>제증명서 사본 (매당)</td>
+                              <td class="text-right price-text">1,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td rowspan="2">기타 서류</td>
+                              <td>소견서</td>
+                              <td class="text-right price-text">20,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+                            <tr>
+                              <td>보험회사 양식 진단서/소견서</td>
+                              <td class="text-right price-text">30,000</td>
+                              <td class="text-center date-text">2021.08.26</td>
+                            </tr>
+
+                            <tr class="section-divider">
+                              <td class="category-text text-center" rowspan="2">행위료<br><span
+                                  style="font-size:11px; font-weight:normal; color:#666;">(기능검사료)</span></td>
+                              <td rowspan="2">시기능검사</td>
+                              <td>눈의 계측검사 (편측)</td>
+                              <td class="text-right price-text">20,000</td>
+                              <td class="text-center date-text">2022.10.24</td>
+                            </tr>
+                            <tr>
+                              <td>안구광학단층촬영 (편측)</td>
+                              <td class="text-right price-text">50,000 - 100,000</td>
+                              <td class="text-center date-text">2022.10.24</td>
+                            </tr>
+
+                            <tr class="section-divider">
+                              <td class="category-text text-center" rowspan="4">치료료 / 시술료</td>
+                              <td rowspan="2">건조증 치료</td>
+                              <td>안구건조증 마사지</td>
+                              <td class="text-right price-text">10,000</td>
+                              <td class="text-center date-text">2024.04.15</td>
+                            </tr>
+                            <tr>
+                              <td>안구건조증 시술 IPL</td>
+                              <td class="text-right price-text">100,000</td>
+                              <td class="text-center date-text">2025.02.10</td>
+                            </tr>
+                            <tr>
+                              <td rowspan="2">기타 치료</td>
+                              <td>비립종 제거 (개당)</td>
+                              <td class="text-right price-text">10,000</td>
+                              <td class="text-center date-text">2024.04.15</td>
+                            </tr>
+                            <tr>
+                              <td>결막모반 레이저</td>
+                              <td class="text-right price-text">100,000</td>
+                              <td class="text-center date-text">2024.04.15</td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
                     </div>
                   </div>
                 </div>
