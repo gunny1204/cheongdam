@@ -1,0 +1,149 @@
+/* Main page only. The shared theme and all subpages remain untouched. */
+body.home-renewal { --home-rose: #b84b60; --home-ink: #242831; margin: 0; min-width: 0; height: auto; min-height: 100vh; color: var(--home-ink); background: #fff; }
+.home-renewal *, .home-renewal *::before, .home-renewal *::after { box-sizing: border-box; }
+.home-renewal button, .home-renewal a { -webkit-tap-highlight-color: transparent; }
+.home-renewal a:focus-visible, .home-renewal button:focus-visible { outline: 3px solid #b84b60; outline-offset: 5px; }
+.home-renewal .home-skip { position: fixed; top: -80px; left: 16px; z-index: 10002; padding: 12px 18px; background: #fff; }
+.home-renewal .home-skip:focus { top: 8px; }
+.home-renewal .header { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 1px solid #ebebeb; }
+.home-renewal .header.is_active { position: sticky; right: auto; left: auto; box-shadow: 0 2px 8px #00000008; }
+.home-renewal .header .section_header_wrap { background: #fff; }
+.home-renewal .header .section_header { width: min(1100px, calc(100% - 48px)); margin: 0 auto; }
+.home-renewal .header .area_inner { display: flex; align-items: center; min-height: 76px; padding: 0; overflow: visible; gap: 0; }
+.home-renewal .header .area_logo { display: block; float: none; flex: none; }
+.home-renewal .header .area_logo .site_name { font-size: 22px; line-height: 1.2; font-weight: 400; }
+.home-renewal .header .area_logo::after { margin: 0 25px 0 21px; }
+.home-renewal .home-header-logo { display: none; }
+.home-renewal .header .area_navbar { display: block; overflow: visible; padding: 0; }
+.home-renewal .header .list_sitemenu_wrap { padding: 0; }
+.home-renewal .header .list_sitemenu { display: flex; gap: 20px; height: auto; margin: 0; overflow: visible; }
+.home-renewal .header .list_sitemenu > li { float: none; padding: 0; white-space: nowrap; color: #666; }
+.home-renewal .header .list_sitemenu a { padding: 5px 0; line-height: 22px; color: #666; }
+.home-renewal .header .list_sitemenu .text { font-size: 15px !important; }
+.home-renewal .header .list_sitemenu > li.selected a, .home-renewal .header .list_sitemenu a:hover { color: #de9725; }
+.home-renewal .header .list_sitemenu > li .selected_line { right: 0; left: 0; background: #de9725; }
+.home-renewal .header .sitemenu_last, .home-renewal .header .btn_list_prev, .home-renewal .header .btn_list_next { display: none; }
+.home-renewal .header .area_global { position: static; margin-left: auto; padding-left: 24px; }
+.home-renewal .header .btn_view_all { display: flex; align-items: center; gap: 4px; color: #111; white-space: nowrap; }
+.home-renewal .home-menu-icon { display: inline-flex; flex-direction: column; justify-content: space-between; width: 13px; height: 11px; }
+.home-renewal .home-menu-icon i { display: block; height: 1px; width: 100%; background: #888; }
+.home-renewal .header .home-menu-label { font-size: 15px !important; }
+.home-renewal .home-hero { min-height: min(56.28vw, 1080px); background: #faf7f2 url('../../../img/home-hero-background.png') center center / cover no-repeat; }
+.home-renewal .home-hero-inner { position: relative; width: 100%; max-width: 1920px; margin: 0 auto; padding: 5.8% 4.4% 3.6%; display: grid; grid-template-columns: 15.6% 1fr; column-gap: 4%; }
+.home-renewal .home-brand { align-self: start; min-height: 18.3vw; max-height: 350px; padding-right: 18px; border-right: 1px solid #d8d3cc; text-align: left; }
+.home-renewal .home-brand img { display: block; width: clamp(64px, 5.2vw, 100px); height: auto; margin: 0 auto 14px; mix-blend-mode: multiply; }
+.home-renewal .home-brand-name { font-size: clamp(20px, 1.8vw, 34px) !important; font-weight: 700; text-align: center; letter-spacing: -1.8px; white-space: nowrap; }
+.home-renewal .home-brand-description { margin-top: 22px; font-size: clamp(14px, 1.4vw, 27px) !important; line-height: 1.5; letter-spacing: -1px; }
+.home-renewal .home-message { padding-top: 4.4vw; }
+.home-renewal .home-headline { margin: 0 0 2.5vw; font-size: clamp(30px, 3.25vw, 62px); font-weight: 700; line-height: 1.27; letter-spacing: -2.8px; word-break: keep-all; }
+.home-renewal .home-headline span { font-size: inherit !important; }
+.home-renewal .home-headline em { font-style: normal; color: var(--home-rose); }
+.home-renewal .home-features { display: grid; gap: 1.9vw; width: 42vw; max-width: 800px; }
+.home-renewal .home-feature { display: flex; align-items: flex-start; gap: 1.8vw; }
+.home-renewal .home-feature-icon { display: grid; place-items: center; flex: 0 0 5vw; width: 5vw; height: 5vw; max-width: 96px; max-height: 96px; border-radius: 50%; background: #f7e8e4; color: var(--home-rose); }
+.home-renewal .home-feature-icon svg { width: 52%; height: 52%; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.home-renewal .home-feature h2 { margin: 0 0 3px; font-size: clamp(19px, 1.7vw, 33px); font-weight: 700; line-height: 1.25; letter-spacing: -1.2px; }
+.home-renewal .home-feature p { font-size: clamp(14px, 1.3vw, 25px) !important; line-height: 1.35; letter-spacing: -0.8px; word-break: keep-all; color: #5b5c60; }
+.home-renewal .home-actions { display: flex; gap: 1.2vw; margin: 2.1vw 0 0 3.4vw; width: 48vw; max-width: 920px; }
+.home-renewal .home-action { display: flex; align-items: center; justify-content: center; gap: 12px; flex: 1; min-height: 4.1vw; padding: 14px 10px; border: 1px solid #c76074; border-radius: 13px; background: #ffffffef; color: var(--home-ink); cursor: pointer; font-size: clamp(15px, 1.35vw, 26px) !important; font-weight: 600; line-height: 1.4 !important; white-space: nowrap; transition: background .15s; }
+.home-renewal .home-action::after { content: '›'; font-size: 1.35em; font-weight: 400; line-height: 1; }
+.home-renewal .home-action:hover { background: #faeeee; }
+.home-renewal .home-action-primary { background: var(--home-rose); color: #fff; }
+.home-renewal .home-action-primary:hover { background: #9f3c50; }
+.home-renewal .home-menu-backdrop { display: none; position: fixed; inset: 0; z-index: 1090; border: 0; background: #0005; cursor: pointer; }
+.home-renewal .home-menu-backdrop.is-visible { display: block; }
+.home-renewal .side_menu { display: none; position: fixed; inset: 0 0 0 auto; z-index: 1100; width: min(360px, 90vw); padding: 70px 26px 30px; background: #fff; overflow-y: auto; }
+.home-renewal .side_menu.is-open { display: block; }
+.home-renewal .side_menu .btn_close { position: absolute; top: 18px; right: 22px; border: 0; background: none; padding: 5px; font-size: 26px !important; cursor: pointer; }
+.home-renewal .side_menu .area_logo { display: block; margin-bottom: 26px; }
+.home-renewal .side_menu .site_name { color: #222; font-size: 23px; }
+.home-renewal .side_menu .list_sitemenu li { border: 0; padding: 0; }
+.home-renewal .side_menu .sitemenu_inner { display: flex; align-items: center; border-top: 1px solid #eee !important; background: #fff !important; }
+.home-renewal .side_menu .sitemenu_inner a { display: block; flex: 1; padding: 15px 0; color: #333; }
+.home-renewal .side_menu .menu_name { position: static; padding: 0; color: #333; opacity: 1; filter: none; }
+.home-renewal .side_menu .selected > .sitemenu_inner .menu_name { color: #de9725; }
+.home-renewal .side_menu .sitemenu_inner::before { display: none !important; }
+.home-renewal .side_menu .sitemenu_inner button { position: static; display: block; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; color: #555; }
+.home-renewal .side_menu .list_sub_menu { display: none; padding: 0 0 10px 16px; }
+.home-renewal .side_menu .list_sitemenu li.is_sub_menu .list_sub_menu { margin: 0; padding: 8px 16px; background: #faf7f4; }
+.home-renewal .side_menu .is_open .list_sub_menu { display: block; }
+.home-renewal .side_menu .list_sub_menu a { display: block; padding: 10px 0; color: #666; }
+.home-renewal .side_menu .copyright { margin-top: 32px; color: #999; font-size: 12px; }
+.home-renewal .home-dialog { width: min(420px, calc(100% - 40px)); padding: 0; border: 0; border-radius: 16px; background: white; color: var(--home-ink); box-shadow: 0 16px 60px #0003; }
+.home-renewal .home-dialog::backdrop { background: #0007; }
+.home-renewal .home-dialog h2 { padding: 18px; color: white; text-align: center; font-size: 20px; background: var(--home-rose); }
+.home-renewal .home-dialog-content { padding: 26px; text-align: center; }
+.home-renewal .home-dialog-content p { margin: 8px 0; }
+.home-renewal .home-dialog-content .home-phone { color: var(--home-rose); font-size: 28px !important; font-weight: bold; }
+.home-renewal .home-dialog form { padding: 0 26px 24px; }
+.home-renewal .home-dialog button { width: 100%; padding: 12px; border: 0; border-radius: 8px; background: #30333a; color: white; cursor: pointer; }
+.home-renewal .footer { background: #111; color: #eee; }
+.home-renewal .footer .section_footer { width: min(1100px, calc(100% - 48px)); margin: auto; padding: 32px 0; }
+.home-renewal .footer .footer_inner { padding: 0; min-height: 0; }
+.home-renewal .footer .footer_flex_container { display: flex; justify-content: space-between; gap: 24px; }
+.home-renewal .footer .copyright { margin-bottom: 10px; }
+.home-renewal .footer p { font-size: 14px !important; line-height: 1.8; }
+.home-renewal .footer .mobile_top_area, .home-renewal .footer .area_sns { display: none; }
+.home-renewal .footer .area_search { position: static; margin: 0; width: auto; }
+.home-renewal .footer .area_search a { display: block; padding: 12px; border: 1px solid #444; }
+.home-renewal .footer .area_aside { position: static; }
+@media (min-width: 1921px) {
+  .home-renewal .home-brand { min-height: 350px; }
+  .home-renewal .home-message { padding-top: 84px; }
+  .home-renewal .home-headline { margin-bottom: 48px; }
+  .home-renewal .home-features { gap: 36px; }
+  .home-renewal .home-feature { gap: 34px; }
+  .home-renewal .home-actions { margin-top: 40px; margin-left: 65px; gap: 23px; }
+  .home-renewal .home-action { min-height: 79px; }
+}
+@media (max-width: 1100px) {
+  .home-renewal .header .section_header { width: calc(100% - 32px); }
+  .home-renewal .header .area_logo .site_name { font-size: 19px; }
+  .home-renewal .header .area_logo::after { margin: 0 16px; }
+  .home-renewal .header .list_sitemenu { gap: 14px; }
+  .home-renewal .header .area_global { padding-left: 16px; }
+}
+@media (max-width: 900px) {
+  .home-renewal .header .area_inner { min-height: 68px; }
+  .home-renewal .header .area_logo::after, .home-renewal .header .area_navbar { display: none; }
+  .home-renewal .header .area_logo .site_name a { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 600; letter-spacing: -1px; }
+  .home-renewal .home-header-logo { display: block; width: 34px; height: 34px; }
+  .home-renewal .header .btn_view_all { width: 44px; height: 44px; justify-content: center; }
+  .home-renewal .header .home-menu-label { display: none; }
+  .home-renewal .home-menu-icon { width: 23px; height: 17px; }
+  .home-renewal .home-menu-icon i { height: 2px; background: #333; }
+  .home-renewal .home-hero { min-height: 0; background-position: 64% top; background-size: auto 730px; }
+  .home-renewal .home-hero-inner { display: block; padding: 34px 24px 40px; background: linear-gradient(90deg, #fffcf8ed 0%, #fffcf8e8 48%, #fffcf8a8 100%); }
+  .home-renewal .home-brand { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; min-height: 0; max-height: none; border: 0; padding: 0 0 25px; }
+  .home-renewal .home-brand img { width: 52px; margin: 0; }
+  .home-renewal .home-brand-name { font-size: 23px !important; }
+  .home-renewal .home-brand-description { flex-basis: 100%; margin-top: 0; text-align: center; font-size: 15px !important; }
+  .home-renewal .home-brand-description br { display: none; }
+  .home-renewal .home-message { max-width: 600px; margin: auto; padding: 0; }
+  .home-renewal .home-headline { font-size: clamp(29px, 5.4vw, 46px); line-height: 1.35; letter-spacing: -1.8px; margin: 0 0 30px; text-align: center; }
+  .home-renewal .home-features { width: auto; gap: 24px; }
+  .home-renewal .home-feature { gap: 18px; }
+  .home-renewal .home-feature-icon { flex-basis: 64px; width: 64px; height: 64px; }
+  .home-renewal .home-feature h2 { font-size: 22px; }
+  .home-renewal .home-feature p { font-size: 16px !important; letter-spacing: -.6px; }
+  .home-renewal .home-actions { width: auto; margin: 30px 0 0; gap: 10px; }
+  .home-renewal .home-action { min-height: 54px; font-size: 16px !important; border-radius: 10px; gap: 8px; }
+}
+@media (max-width: 480px) {
+  .home-renewal .home-hero-inner { padding: 30px 20px 36px; }
+  .home-renewal .home-headline { font-size: clamp(25px, 6.6vw, 31px); letter-spacing: -1.5px; }
+  .home-renewal .home-feature { gap: 14px; }
+  .home-renewal .home-feature-icon { flex-basis: 54px; width: 54px; height: 54px; }
+  .home-renewal .home-feature h2 { font-size: 20px; }
+  .home-renewal .home-feature p { font-size: 15px !important; }
+  .home-renewal .home-feature p br { display: none; }
+  .home-renewal .home-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .home-renewal .home-action-primary { grid-column: 1 / -1; }
+  .home-renewal .home-action { font-size: 15px !important; }
+  .home-renewal .footer .section_footer { width: calc(100% - 40px); }
+  .home-renewal .footer .footer_flex_container { display: block; }
+  .home-renewal .footer .pc_only_area { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-renewal *, .home-renewal *::before, .home-renewal *::after { transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,4 @@
+Source: User-supplied main-page target image, codex-clipboard-de93f927-53c0-4295-ab59-7bc3200875e4.png.
+Method: Built-in image_gen edit, 2026-11-02. This is a reconstructed design background, not a verified photograph of the actual clinic.
+Prompt: Extract the clean photographic background only. Preserve the exact wide composition, warm cream ophthalmology interior, pink logo on rear glass, slit lamp and retina monitor on the right, and bright ivory left area. Remove all foreground logo, text, divider, feature icons/circles and buttons. Inpaint with matching background and lighting. No new text or graphics.
+The foreground hospital logo is separately reused from the existing project. All foreground text, icons and buttons are live HTML/SVG/CSS.
